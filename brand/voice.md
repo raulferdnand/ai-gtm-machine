@@ -45,6 +45,8 @@ Fonte das provas: casos públicos da Sprinklr, detalhados em `brand/provas.md`.
 Regra: um CTA por post. Nunca empilhar dois.
 
 ## 7. Filtro pré-publicação (5 perguntas)
+Nada é publicado automaticamente no LinkedIn. Depois do filtro, o texto vai para revisão do Raul.
+
 1. A primeira linha prende sem aquecimento?
 2. Tem uma prova concreta (número, print, exemplo)?
 3. Alguém do meu ICP reconheceria o próprio problema aqui?

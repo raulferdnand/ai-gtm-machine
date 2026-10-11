@@ -78,9 +78,9 @@ Checar antes do disparo: variáveis `empresa` e `primeiro nome` carregando em to
 
 | Campo | Definição |
 |---|---|
-| **Data de início** | 2026-10-19 |
+| **Data de início** | 2026-10-13 |
 | **Duração do ciclo** | 8 semanas |
-| **Data de fim** | 2026-12-11 |
+| **Data de fim** | 2026-12-04 |
 | **Ferramenta / bot** | Nuvia, LinkedIn, e-mail |
 | **Campaign ID (Nuvia)** | {{...}} |
 | **Responsável** | Raul Pereira |
@@ -105,5 +105,6 @@ Preencher ao fim do primeiro ciclo.
 
 - [ ] Definir geografia, sinal de fit e lista de negativação
 - [ ] Validar lista de negativação e uso dos cases com o gestor
-- [ ] Preencher `brand/design.md` e produzir o Raio-X
+- [ ] Aprovar o design proposto e produzir o Raio-X (semana 1)
+- [ ] Revisar mensagens-base (`outbound/mensagens-base.md`) e escolher hooks (`conteudo/banco-de-hooks.md`)
 - [ ] Configurar `.env` (Nuvia, Apify)

@@ -6,7 +6,7 @@
 - **Nome sugerido:** Atendimento sem silos
 - **Resumo:** mostrar a líderes de CX de grandes empresas brasileiras quanto custa operar canais separados, com números de casos públicos, e converter esse interesse em conversa 1:1.
 - **Objetivo principal:** 20 reuniões com líderes de CX em 8 semanas (2,5 por semana).
-- **Período:** 19/10/2026 a 11/12/2026. Termina antes das festas de fim de ano, quando agenda de C-Level some.
+- **Período:** 13/10/2026 a 04/12/2026. Termina antes das festas de fim de ano, quando agenda de C-Level some.
 - **Geografia:** somente Brasil.
 - **Objetivos secundários:** gerar uma lista de leads com sinal (comentaram, baixaram, responderam) para nutrir depois; validar qual pilar de conteúdo gera mais conversa.
 
@@ -39,20 +39,20 @@
 | E-mail frio (paralelo) | alcança quem não aceita convite | 3 e-mails curtos | Médio |
 
 **Matemática do funil [premissa, ajustar após semana 2]:**
-600 convites (75/semana) → 35% de aceite = 210 conexões → 25% de resposta = ~52 conversas → 40% viram reunião = ~21 reuniões. Comment-gate e e-mail entram como folga para cobrir quedas.
+540 convites (60-75/semana) → 35% de aceite = 210 conexões → 25% de resposta = ~52 conversas → 40% viram reunião = ~21 reuniões. Comment-gate e e-mail entram como folga para cobrir quedas.
 
 ## 5. Calendário
 | Semana | Datas | Conteúdo | Outbound | Marcos / dependências |
 |---|---|---|---|---|
-| 0 (preparo) | 12-16/10 | Material "Raio-X do atendimento" (12 casos por setor) | Lista inicial de 150 leads + triagem de ICP | Material pronto antes do 1º comment-gate; `.env` com Nuvia/Apify |
-| 1 | 19-23/10 | 3 posts P1 (custo); 1 comment-gate | 75 convites | Testar variáveis `empresa` e `primeiro nome` |
-| 2 | 26-30/10 | 3 posts P2 (canais unificados) | 75 convites + DM 1 dos aceitos | **Checkpoint:** taxa de aceite e resposta; ajustar nota |
-| 3 | 2-6/11 | 3 posts P1/P2; comment-gate | 75 convites + DMs 2 | Lista de mais 150 leads |
-| 4 | 9-13/11 | 3 posts; post de caso brasileiro (Santander/Autopass) | 75 convites + e-mail 1 para não aceitos | **Meio da campanha:** meta parcial de 8-10 reuniões |
-| 5 | 16-20/11 | 3 posts; comment-gate | 75 convites + DMs | Repostar o post campeão das semanas 1-4 |
-| 6 | 23-27/11 | 3 posts | 75 convites + e-mail 2 | Lista final de 150 leads |
-| 7 | 30/11-4/12 | 3 posts; comment-gate | 75 convites + DM 3 (último toque) | |
-| 8 | 7-11/12 | 2 posts + post de retrospectiva | Só follow-ups e agendamento | Debrief e preenchimento da seção 8 do playbook |
+| 0 (preparo) | 11-12/10 | Mensagens-base e banco de hooks (prontos); design proposto | Montar lista inicial de 150 leads | 12/10 é feriado: só preparo. Raul revisa mensagens e escolhe os hooks |
+| 1 | 13-16/10 | 2 posts P1 (sem comment-gate ainda) | 60 convites | Testar notas A e B. Produzir o Raio-X |
+| 2 | 19-23/10 | 3 posts P2; 1º comment-gate com o Raio-X | 75 convites + DM 1 dos aceitos | **Checkpoint:** taxa de aceite e resposta; ajustar nota |
+| 3 | 26-30/10 | 3 posts P1/P2 | 75 convites + DM 2 | Lista de mais 150 leads |
+| 4 | 3-6/11 | 2 posts; caso brasileiro (Santander/Autopass); comment-gate | 60 convites + e-mail 1 para não aceitos | 2/11 feriado (Finados). **Meio da campanha:** meta parcial de 8 reuniões |
+| 5 | 9-13/11 | 3 posts P3; repost do post campeão | 75 convites + DMs | |
+| 6 | 16-19/11 | 2 posts; comment-gate | 60 convites + e-mail 2 | 20/11 feriado (Consciência Negra). Lista final de 150 leads |
+| 7 | 23-27/11 | 3 posts | 75 convites + DM 3 (último toque) | |
+| 8 | 30/11-4/12 | 2 posts + retrospectiva | Só follow-ups e agendamento | Debrief e seção 8 do playbook |
 
 20% dos slots de post ficam livres para reagir a notícia do setor.
 
