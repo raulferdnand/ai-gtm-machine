@@ -92,6 +92,7 @@ Prospecção 1:1 segue outro registro: carregue `brand/voice-outbound.md` e use 
 - **Prompt de agente:** mostre o texto no chat e espere OK antes de gravar.
 - **Segredos e leads (PII):** `.env`, CSVs, ledgers e `signals/` ficam fora do git (`.gitignore`). Nunca imprima chaves nem suba dados de leads.
 - **Ações externas** (publicar, enviar DM/e-mail, ativar campanha, criar contatos em massa): confirme com o aluno antes.
+- **Git automático:** ao terminar qualquer alteração em arquivos versionados, faça commit com mensagem descritiva e push para `origin main`, sem perguntar. Nunca versione o que está no `.gitignore` (`.env`, CSVs, `signals/`, dados de leads).
 - Entrega direta: sem loops de confirmação além dos gates (hook → conteúdo → publicação). Correções do aluno entram na hora, sem justificar a versão anterior.
 
 ## Placeholders

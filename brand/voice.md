@@ -4,9 +4,9 @@
 > Toda skill de copy (hook-generator, linkedin-post-generator, impact-copywriter, humanize-pt-br) lê este arquivo antes de escrever.
 
 ## 1. Quem fala
-- Nome: {{SEU_NOME}}
-- Papel em uma linha: {{ex: *Head de Growth que automatiza prospecção com IA*}}
-- Para quem escreve (ICP de leitor): {{ex: *fundadores e líderes comerciais de SaaS B2B*}}
+- Nome: Raul Pereira
+- Papel em uma linha: Helping brands reduce costs, unify channels, and data in CX & MKT.
+- Para quem escreve (ICP de leitor): Gerentes e C-Level de CX e de Marketing (listening e social) de grandes empresas
 
 ## 2. Arquétipo e tom
 Escolha UM arquétipo e descreva em 2 linhas como ele soa.

@@ -8,8 +8,8 @@ Documento mestre da campanha. Conteúdo, ads e outbound são uma máquina só: n
 |---|---|
 | **Empresa** | Grandes empresas (enterprise) com alto volume de atendimento e de conversa em redes sociais. Setores: varejo, bens de consumo (CPG), serviços financeiros, telecom, tecnologia, viagens e hotelaria, governo. Geografia: A definir |
 | **Sinal técnico/comportamental de fit** | A definir. Hipóteses: vagas abertas para contact center ou social media; operação omnichannel (WhatsApp, chat, redes); marca com crise ou alto volume de menções; troca recente de liderança de CX/Marketing |
-| **Pessoa (decisor)** | Persona A (Service): Gerente, Head, Diretor e C-Level de CX / Atendimento (CCO, CXO). Persona B (Insights + Social): Gerente, Head, Diretor e C-Level de Marketing responsáveis por social listening e social media (CMO) |
-| **Dor comum** | Times, ferramentas e canais isolados que impedem uma visão única do cliente: atendimento lento e caro (A) e muita conversa sobre a marca sem virar insight acionável (B) |
+| **Pessoa (decisor)** | Gerente, Head, Diretor e C-Level de CX / Atendimento (CCO, CXO). Marketing/Social tem campanha própria em `campaigns/marketing-social/` |
+| **Dor comum** | Times, ferramentas e canais isolados que impedem uma visão única do cliente: atendimento lento, caro e sem visão única do cliente entre canais |
 | **Quem fica de fora** | A definir. Sugestão: PMEs sem volume de atendimento/social que justifique plataforma enterprise |
 | **Lista de negativação** | A definir (clientes atuais Sprinklr, concorrentes, parceiros) |
 
@@ -17,7 +17,7 @@ Fonte de verdade da base: `signals/` e `outbound/` ({{nome do arquivo}}).
 
 ## 2. Estratégia
 
-- **Oferta:** Sprinklr, plataforma Unified-CXM. Para CX: Sprinklr Service (contact center omnichannel, agentes de IA). Para Marketing: Sprinklr Insights (social listening, benchmarking competitivo) e Sprinklr Social (publicação e engajamento). Provas: Leader no Gartner MQ de Social Media Management and Listening e de Voice of Customer Platforms (2026); 3M reduziu 90% do tempo de resposta a casos
+- **Oferta:** Sprinklr Service, da plataforma Unified-CXM da Sprinklr (contact center omnichannel, agentes de IA). Provas: Leader no Gartner MQ de Social Media Management and Listening e de Voice of Customer Platforms (2026); 3M reduziu 90% do tempo de resposta a casos
 - **Ímã (material rico):** {{o que gera o sinal; vive em `conteudo/`}}
 - **Ideia da campanha:** {{o quebra-gelo: por que essa pessoa responderia}}
 - **Objetivo (60-90 dias):** {{ex: *30 reuniões em 8 semanas*}}
@@ -102,5 +102,4 @@ Preencher ao fim do primeiro ciclo.
 ## 9. Pendente
 
 - [ ] Definir geografia, sinal de fit e lista de negativação
-- [ ] Decidir se a persona de Marketing/Social vira campanha própria (`campaigns/marketing-social`), já que o repo organiza campanhas por público
 - [ ] Ímã, ideia da campanha, objetivo e métrica norte
