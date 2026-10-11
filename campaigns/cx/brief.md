@@ -59,7 +59,7 @@
 ## 6. Peças necessárias
 | Peça | Tipo | Prioridade | Prazo |
 |---|---|---|---|
-| Raio-X do atendimento: 12 casos com números, por setor | PDF / carrossel (material do comment-gate) | Obrigatória | Semana 0 |
+| Raio-X do atendimento: 12 casos com números, por setor | PDF / carrossel (material do comment-gate) | Obrigatória | Semana 1 |
 | Nota de conexão (2 variações para teste) | Outbound | Obrigatória | Semana 0 |
 | DMs 1, 2 e 3 | Outbound | Obrigatória | Semana 0 |
 | 3 e-mails frios | Outbound | Obrigatória | Semana 3 |
