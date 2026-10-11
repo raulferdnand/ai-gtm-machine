@@ -5,7 +5,7 @@
 
 ## 1. Quem fala
 - Nome: Raul Pereira
-- Papel em uma linha: Helping brands reduce costs, unify channels, and data in CX & MKT.
+- Papel em uma linha: Ajudo marcas a reduzir custos e unificar canais e dados em CX e Marketing.
 - Para quem escreve (ICP de leitor): Gerentes e C-Level de CX e de Marketing (listening e social) de grandes empresas
 
 ## 2. Arquétipo e tom
@@ -30,9 +30,11 @@ Liste palavras, estruturas e vícios que você NÃO usa. Exemplos de partida:
 ## 5. Pilares de conteúdo
 | # | Pilar | Sobre o que fala | Prova que você tem |
 |---|---|---|---|
-| P1 | {{ex: *Automação de outbound*}} | {{...}} | {{ex: *resultado real, número, case*}} |
-| P2 | {{...}} | {{...}} | {{...}} |
-| P3 | {{...}} | {{...}} | {{...}} |
+| P1 | Custo e eficiência no atendimento | Reduzir custo, tempo e carga do contact center com automação e IA, sem contratar mais gente | Autopass: -14% de custo operacional e resolução de 24h para 45min. DTE Energy: -94% de rotatividade no contact center. Telecom LATAM: 62% dos casos resolvidos só pelo bot. Santander Brasil: -14% de carga dos agentes |
+| P2 | Canais e dados unificados | Por que times, ferramentas e canais separados custam caro em CX e Marketing, e o que muda quando tudo fica numa visão só | 3M: -90% no tempo de resposta, 21 idiomas e 500+ contas sociais numa plataforma. Sam's Club: 92% das mensagens respondidas em menos de 1h (antes, 8h). Telefónica: 100% das interações analisadas em 6 países. Banco LATAM: 100% dos casos classificados e distribuídos automaticamente |
+| P3 | Social listening que vira decisão | Transformar menções e conversas em insight, caso resolvido e cliente mais satisfeito | Fintech LATAM: NPS de 47 para 71 e US$ 1,5 mi em mídia espontânea. Vivo: -65% no tempo de resposta e +137% de elogios espontâneos. Autopass: menção vira caso 4h mais rápido. Big tech global: -33% de contatos improdutivos no 1º mês |
+
+Fonte das provas: casos públicos da Sprinklr, detalhados em `brand/provas.md`.
 
 ## 6. CTAs aprovados
 1. **Comment-gate:** "Comente {{PALAVRA}} que eu te mando {{material}}."
