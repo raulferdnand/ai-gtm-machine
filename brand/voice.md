@@ -43,7 +43,7 @@ Fonte das provas: casos públicos da Sprinklr, detalhados em `brand/provas.md`.
 
 ## 6. CTAs aprovados
 1. **Comment-gate:** A definir (sugestão: "Comente CASES que eu te mando os casos com os números, por setor." Depende de criar o material).
-2. **Conversa:** "Me chama no direct que te mostro o caso do seu setor."
+2. **Conversa:** "Se quiser ver o caso do seu setor, é só me chamar no direct."
 Regra: um CTA por post. Nunca empilhar dois.
 
 ## 7. Filtro pré-publicação (5 perguntas)

@@ -26,4 +26,4 @@ O cliente que reclamou no Instagram não sabe quantas ferramentas existem do out
 
 Caso público completo: https://www.sprinklr.com/stories/autopass/
 
-Se o seu atendimento ainda roda em canais apartados, me chama no direct que te mostro o caso do seu setor.
+Se o seu atendimento ainda roda em canais apartados e quiser ver o caso do seu setor, é só me chamar no direct.

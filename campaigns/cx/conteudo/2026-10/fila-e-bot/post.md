@@ -24,4 +24,4 @@ Ninguém entra num contact center sonhando em informar saldo de pré-pago.
 
 Caso público completo: https://www.sprinklr.com/stories/latin-american-telecom/
 
-Se a sua fila tem muito pedido repetitivo, me chama no direct que te mostro o caso do seu setor.
+Se a sua fila tem muito pedido repetitivo e quiser ver o caso do seu setor, é só me chamar no direct.
