@@ -4,21 +4,23 @@
 > A skill `outbound-personalization` carrega este arquivo SEMPRE antes de escrever.
 
 ## Sobre você (usado para achar pontos em comum com o lead)
-- Trajetória em 3 linhas: {{ex: *10 anos em vendas B2B, 3 em startups de dados, hoje constrói máquinas de GTM*}}
-- Empresas onde trabalhou: {{...}}
-- Cidades / escolas / comunidades / eventos em que esteve: {{...}}
-- Temas em que você tem autoridade real: {{...}}
+- Trajetória em 3 linhas: Mais de 8 anos em vendas B2B de SaaS. Na Salesforce (2022-2024), atendi contas mid-market multi-indústria e bati 120% da cota de ACV no FY24. Hoje, na Sprinklr, atendo grandes empresas no Brasil em CX e Marketing.
+- Empresas onde trabalhou: Sprinklr (atual), Salesforce, Accountfy, Leads2b, EADBOX, Volvo Trucks. Clientes atendidos na Salesforce: {{CLIENTES_SALESFORCE}}
+- Cidades / escolas / comunidades / eventos em que esteve: Curitiba e São Paulo; UFPR (Administração); MBA USP/Esalq (Gestão de Negócios, em curso); intercâmbio de inglês no European College Management (2015); AIESEC (voluntário); Escola Conquer
+- Temas em que você tem autoridade real: CRM e atendimento ao cliente (certificação Service Cloud), prospecção outbound (Receita Previsível), vendas enterprise, unificação de canais e dados em CX e Marketing
 
 ## Registro
 - Escreva como no WhatsApp: curto, direto, uma ideia por mensagem.
 - Sem jargão de conteúdo, sem "espero que esteja bem", sem pitch na primeira linha.
-- Máx. {{ex: 300}} caracteres na nota de conexão, {{ex: 5}} linhas na DM.
+- Máx. 300 caracteres na nota de conexão (limite do LinkedIn), 5 linhas na DM.
 
 ## Proibido em 1:1
 - Elogio genérico ("adorei seu perfil")
 - Travessão e "não só X, mas Y"
 - Pedir reunião na primeira mensagem
-- {{o seu}}
+- Falar mal de concorrente pelo nome
+- Prometer número que não está num caso público (ver `brand/provas.md`)
+- Jargão em inglês quando existe palavra em português
 
 ## Anatomia de uma boa primeira mensagem
 1. Gancho que só serve para ESTA pessoa (fato verificável do perfil/post)
