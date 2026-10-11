@@ -8,8 +8,8 @@
 
 ---
 
-Fila grande não se resolve com mais agente.
-62% dos casos de uma telecom fecharam sem nenhum.
+Alto volume de atendimento não se resolve com mais agentes.
+62% dos casos de uma telecom foram resolvidos sem nenhum agente.
 
 É uma das maiores operadoras da América Latina. Boa parte da fila do pré-pago era gente querendo consultar saldo ou colocar crédito. O agente fazia isso à mão, pulando entre sistemas e repetindo as mesmas perguntas de abertura.
 
@@ -24,4 +24,4 @@ Ninguém entra num contact center sonhando em informar saldo de pré-pago.
 
 Caso público completo: https://www.sprinklr.com/stories/latin-american-telecom/
 
-Se a sua fila tem muito pedido repetitivo e quiser ver o caso do seu setor, é só me chamar no direct.
+Se a sua operação recebe muitas demandas repetitivas e quiser ver o caso do seu setor, é só me chamar no direct.

@@ -9,7 +9,7 @@
 | # | Hook | Tipo | Caract. | Nota | Case |
 |---|---|---|---|---|---|
 | 1 | O Santander tirou 14% da carga dos agentes.<br>Com o mesmo time. | Número | 61 | 8,4 | [Santander Brasil](https://www.sprinklr.com/stories/santander-brasil/) |
-| 2 | Fila grande não se resolve com mais agente.<br>62% dos casos de uma telecom fecharam sem nenhum. | Contrarian | 93 | 8,6 | [Telecom LATAM](https://www.sprinklr.com/stories/latin-american-telecom/) |
+| 2 | Alto volume de atendimento não se resolve com mais agentes.<br>62% dos casos de uma telecom foram resolvidos sem nenhum agente. | Contrarian | 124 | 8,6 | [Telecom LATAM](https://www.sprinklr.com/stories/latin-american-telecom/) |
 | 3 | Seu agente está respondendo saldo de pré-pago<br>enquanto o cliente com problema sério espera. | Dor exata | 91 | 7,9 | [Telecom LATAM](https://www.sprinklr.com/stories/latin-american-telecom/) |
 | 4 | Autopass: 24 horas para resolver um caso.<br>Hoje, 45 minutos. | Antes/depois | 59 | 8,3 | [Autopass](https://www.sprinklr.com/stories/autopass/) |
 | 5 | A DTE Energy perdia mais de 40% do contact center por ano.<br>Hoje perde 2,3% ao mês. | Antes/depois | 82 | 8,1 | [DTE Energy](https://www.sprinklr.com/stories/dte-energy/) |
@@ -33,7 +33,7 @@
 | 15 | Uma big tech reduziu 33% dos contatos improdutivos<br>no primeiro mês. | Número | 67 | 7,5 | [Big tech global](https://www.sprinklr.com/stories/global-tech-company/) |
 
 ## Escolhidos para a semana 1 (Raul, 2026-10-11)
-- **Hook 2** (fila e bot): post de terça, 13/10. Rascunho em `2026-10/fila-e-bot/`.
+- **Hook 2** (volume e bot): post de terça, 13/10. Rascunho em `2026-10/fila-e-bot/`.
 - **Hook 4** (Autopass): post de quinta, 15/10. Rascunho em `2026-10/autopass-24h-45min/`.
 
 Telefónica e Vivo foram retirados do banco a pedido do Raul.
