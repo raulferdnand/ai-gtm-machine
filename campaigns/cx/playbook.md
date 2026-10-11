@@ -2,11 +2,13 @@
 
 Documento mestre da campanha. Conteúdo, ads e outbound são uma máquina só: nenhuma subpasta (`conteudo/`, `ads/creative/`, `outbound/`, `signals/`, `scripts/`) pode divergir do que está aqui. Preencha de cima pra baixo; o que ainda não sabe, escreva "A definir" (não apague a linha).
 
+Plano completo, calendário e riscos: `brief.md`.
+
 ## 1. ICP
 
 | Campo | Definição |
 |---|---|
-| **Empresa** | Grandes empresas (enterprise) com alto volume de atendimento e de conversa em redes sociais. Setores: varejo, bens de consumo (CPG), serviços financeiros, telecom, tecnologia, viagens e hotelaria, governo. Geografia: A definir |
+| **Empresa** | Grandes empresas (enterprise) com alto volume de atendimento e de conversa em redes sociais. Setores: varejo, bens de consumo (CPG), serviços financeiros, telecom, tecnologia, viagens e hotelaria, governo. Geografia: Brasil (a confirmar) |
 | **Sinal técnico/comportamental de fit** | A definir. Hipóteses: vagas abertas para contact center ou social media; operação omnichannel (WhatsApp, chat, redes); marca com crise ou alto volume de menções; troca recente de liderança de CX/Marketing |
 | **Pessoa (decisor)** | Gerente, Head, Diretor e C-Level de CX / Atendimento (CCO, CXO). Marketing/Social tem campanha própria em `campaigns/marketing-social/` |
 | **Dor comum** | Times, ferramentas e canais isolados que impedem uma visão única do cliente: atendimento lento, caro e sem visão única do cliente entre canais |
@@ -18,24 +20,24 @@ Fonte de verdade da base: `signals/` e `outbound/` ({{nome do arquivo}}).
 ## 2. Estratégia
 
 - **Oferta:** Sprinklr Service, da plataforma Unified-CXM da Sprinklr (contact center omnichannel, agentes de IA). Provas: Leader no Gartner MQ de Social Media Management and Listening e de Voice of Customer Platforms (2026); 3M reduziu 90% do tempo de resposta a casos
-- **Ímã (material rico):** {{o que gera o sinal; vive em `conteudo/`}}
-- **Ideia da campanha:** {{o quebra-gelo: por que essa pessoa responderia}}
-- **Objetivo (60-90 dias):** {{ex: *30 reuniões em 8 semanas*}}
-- **Métrica norte:** {{...}}
+- **Ímã (material rico):** Raio-X do atendimento: 12 casos com números, por setor (comment-gate). Vive em `conteudo/`
+- **Ideia da campanha:** "Atendimento sem silos". Atendimento caro quase sempre é problema de canal separado, não de gente; quem unificou cortou tempo e custo sem contratar
+- **Objetivo:** 20 reuniões com líderes de CX em 8 semanas
+- **Métrica norte:** reuniões agendadas por semana (meta 2,5)
 
 ## 3. Canais
 
 | Canal | Papel | Pasta | Status |
 |---|---|---|---|
-| Conteúdo (orgânico) | ímã, gera sinal | `conteudo/` | {{...}} |
-| Ads | amplifica o mesmo ângulo pro mesmo público | `ads/creative/` | {{...}} |
-| Outbound LinkedIn | canal primário? | `outbound/` | {{...}} |
-| Outbound e-mail | paralelo? | `outbound/` | {{...}} |
-| Comment-gate | sinal de post vira DM | `signals/` | {{sim/não; ver `playbook/comment-gate.md`}} |
+| Conteúdo (orgânico) | ímã, gera sinal | `conteudo/` | Planejado: 3 posts/semana |
+| Ads | amplifica o mesmo ângulo pro mesmo público | `ads/creative/` | Opcional, a partir da semana 5, se houver orçamento |
+| Outbound LinkedIn | canal primário | `outbound/` | Planejado: 75 convites/semana |
+| Outbound e-mail | paralelo, para quem não aceita convite | `outbound/` | Planejado: 3 e-mails a partir da semana 4 |
+| Comment-gate | sinal de post vira DM | `signals/` | Sim, 1 por semana com o Raio-X |
 
 ## 4. Sequência (cadência)
 
-Máximo de toques: {{N LinkedIn + N e-mails}}.
+Máximo de toques: 4 LinkedIn (convite + 3 DMs) + 3 e-mails.
 
 | Toque | Canal | Ação / mensagem | Arquivo |
 |---|---|---|---|
@@ -43,8 +45,8 @@ Máximo de toques: {{N LinkedIn + N e-mails}}.
 | D+2 | LinkedIn / e-mail | msg 1 | `outbound/` |
 | D+4 | LinkedIn / e-mail | msg 2 | `outbound/` |
 | D+7 | LinkedIn / e-mail | msg 3 (último toque) | `outbound/` |
-| Ao responder | | {{próxima ação: CTA, reunião, prévia}} | |
-| Sem resposta | | {{vai pra conteúdo/ads como reforço passivo}} | |
+| Ao responder | | aprofundar a dor com pergunta; oferecer o caso do setor; propor reunião de 20 min | |
+| Sem resposta | | entra no público de retargeting de conteúdo/ads | |
 
 Voz: `brand/voice-outbound.md` (1:1, registro de WhatsApp, curto).
 
@@ -76,12 +78,12 @@ Checar antes do disparo: variáveis `empresa` e `primeiro nome` carregando em to
 
 | Campo | Definição |
 |---|---|
-| **Data de início** | {{AAAA-MM-DD}} |
-| **Duração do ciclo** | {{X dias após o primeiro disparo por lead}} |
-| **Data de fim** | {{AAAA-MM-DD}} |
-| **Ferramenta / bot** | {{Nuvia, LinkedIn, e-mail}} |
+| **Data de início** | 2026-10-19 (a confirmar) |
+| **Duração do ciclo** | 8 semanas |
+| **Data de fim** | 2026-12-11 (a confirmar) |
+| **Ferramenta / bot** | Nuvia, LinkedIn, e-mail |
 | **Campaign ID (Nuvia)** | {{...}} |
-| **Responsável** | {{...}} |
+| **Responsável** | Raul Pereira |
 
 ## 8. Resultados e debriefing
 
@@ -90,9 +92,9 @@ Preencher ao fim do primeiro ciclo.
 | Métrica | Meta | Resultado |
 |---|---|---|
 | Leads abordados | | |
-| Taxa de aceite de conexão | | |
-| Taxa de resposta | | |
-| Reuniões agendadas | | |
+| Taxa de aceite de conexão | ≥ 35% | |
+| Taxa de resposta | ≥ 25% | |
+| Reuniões agendadas | 20 | |
 | Custo / tempo por reunião | | |
 
 **O que funcionou:** {{...}}
@@ -102,4 +104,7 @@ Preencher ao fim do primeiro ciclo.
 ## 9. Pendente
 
 - [ ] Definir geografia, sinal de fit e lista de negativação
-- [ ] Ímã, ideia da campanha, objetivo e métrica norte
+- [ ] Confirmar datas, geografia e orçamento de ads
+- [ ] Validar lista de negativação e uso dos cases com o gestor
+- [ ] Preencher `brand/design.md` e produzir o Raio-X
+- [ ] Configurar `.env` (Nuvia, Apify)
