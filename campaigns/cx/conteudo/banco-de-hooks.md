@@ -22,19 +22,18 @@
 | 7 | Se o WhatsApp e o SAC não se falam,<br>seu cliente conta a mesma história duas vezes. | Dor exata | 82 | 8,0 | apoiar com [3M](https://www.sprinklr.com/stories/3m-pioneers-exceptional-customer-experiences/) ou [Sam's Club](https://www.sprinklr.com/stories/sams-club/) |
 | 8 | Conte as ferramentas que seu agente abre<br>para atender um cliente só. | Ameaça à identidade | 68 | 7,6 | apoiar com [Banco LATAM](https://www.sprinklr.com/stories/latin-american-bank/) |
 | 9 | 500 contas sociais, 21 idiomas, uma plataforma.<br>A 3M reduziu 90% do tempo de resposta. | Número | 86 | 7,8 | [3M](https://www.sprinklr.com/stories/3m-pioneers-exceptional-customer-experiences/) |
-| 10 | A Telefónica achou um cliente contatado<br>mais de 20 vezes numa única semana. | Afirmação forte | 75 | 8,7 | [Telefónica](https://www.sprinklr.com/stories/telefonica/) |
 
 ## P3. Social listening que vira decisão
 
 | # | Hook | Tipo | Caract. | Nota | Case |
 |---|---|---|---|---|---|
 | 11 | NPS de 47 para 71.<br>O que uma fintech mudou no atendimento digital. | Número | 66 | 8,2 | [Fintech LATAM](https://www.sprinklr.com/stories/latin-american-fintech/) |
-| 12 | Cerca de 1 milhão de mensagens por ano nas redes.<br>A Vivo passou a responder 65% mais rápido. | Número | 92 | 7,9 | [Vivo](https://www.sprinklr.com/stories/vivo/) |
 | 13 | Toda reclamação no Instagram<br>é um caso de atendimento sem dono. | Contrarian | 63 | 8,3 | apoiar com [Autopass](https://www.sprinklr.com/stories/autopass/) |
 | 14 | A Autopass levava 4 horas<br>para transformar uma reclamação nas redes em chamado. | Dor exata | 79 | 7,8 | [Autopass](https://www.sprinklr.com/stories/autopass/) |
 | 15 | Uma big tech reduziu 33% dos contatos improdutivos<br>no primeiro mês. | Número | 67 | 7,5 | [Big tech global](https://www.sprinklr.com/stories/global-tech-company/) |
 
-## Recomendados para a semana 1
-- **Hook 10** (Telefónica, 8,7): a cena é tão absurda que o leitor precisa abrir o post. Bom para estrear o pilar de canais apartados.
-- **Hook 2** (fila e bot, 8,6): posição que um gestor de CX pode discordar, o que gera comentário.
-- **Hook 4** (Autopass, 8,3): caso brasileiro, antes e depois em uma linha.
+## Escolhidos para a semana 1 (Raul, 2026-10-11)
+- **Hook 2** (fila e bot): post de terça, 13/10. Rascunho em `2026-10/fila-e-bot/`.
+- **Hook 4** (Autopass): post de quinta, 15/10. Rascunho em `2026-10/autopass-24h-45min/`.
+
+Telefónica e Vivo foram retirados do banco a pedido do Raul.

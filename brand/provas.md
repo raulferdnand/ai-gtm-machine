@@ -1,5 +1,7 @@
 # Banco de provas (casos públicos Sprinklr)
 
+Telefónica e Vivo foram retirados a pedido do Raul (2026-10-11): não usar.
+
 Use estes números em posts, ads e outbound. Sempre cite a empresa e o número exato; nunca arredonde para cima. Casos marcados "anônimo" não podem ter o nome da empresa inventado.
 
 | Caso | País / setor | Produtos | Dor | Resultado | Pilar | Link |
@@ -10,9 +12,7 @@ Use estes números em posts, ads e outbound. Sempre cite a empresa e o número e
 | Fintech LATAM (anônimo) | América Latina / fintech | Service, Marketing, Insights | Base de dezenas de milhões pressionando o atendimento digital | -70% a -75% no tempo de primeira resposta; NPS de 47 para 71; US$ 1,5 mi em mídia espontânea; 100+ h/mês economizadas | P3 | https://www.sprinklr.com/stories/latin-american-fintech/ |
 | Banco LATAM (anônimo) | América Latina / banco | Service | Ferramentas básicas, sem automação | -50% na primeira resposta (66,5 para 30 min); 100% dos casos classificados e distribuídos automaticamente; NPS 81,29 | P2 | https://www.sprinklr.com/stories/latin-american-bank/ |
 | Itaú Paraguai | Paraguai / banco | Service | Sem forma consistente de medir satisfação | 1.100+ pesquisas em 2 meses; 85,13% de satisfação positiva | P3 | https://www.sprinklr.com/stories/itau-paraguay/ |
-| Telefónica Hispanoamérica | 6 países LATAM / telecom | Service (CCaaS), IA | Pouca visibilidade sobre BPOs; cliente contatado 20+ vezes na semana | 100% das interações analisadas; 97%+ de precisão na detecção de caixa postal; 11 mil+ posições de agente | P2 | https://www.sprinklr.com/stories/telefonica/ |
 | Santander Brasil | Brasil / banco | Service (chatbot) | Pico de demanda na pandemia com equipe igual | -20% na primeira resposta; -14% de carga dos agentes; +35% de NPS nos casos com agente | P1 | https://www.sprinklr.com/stories/santander-brasil/ |
 | Autopass | Brasil / mobilidade | Service, Insights, Marketing | Dois times, duas ferramentas; 4h para transformar menção em caso | Resolução de 24h para 45 min (-97%); 99,5% dentro do SLA; -14% de custo operacional | P1, P3 | https://www.sprinklr.com/stories/autopass/ |
 | DTE Energy | EUA / energia | Service, Social | Rotatividade acima de 40% ao ano e alto custo de atendimento | -94% de rotatividade; -38% na duração dos casos (12 min por voz para 4min30 no chat) | P1 | https://www.sprinklr.com/stories/dte-energy/ |
 | Telecom LATAM (anônimo) | América Latina / telecom | Service, Journey Facilitator | Pré-pago lotando o atendimento com tarefas básicas | 62% dos casos resolvidos só pelo bot; +13 pts de NPS; 110 mil vendas no WhatsApp em 6 meses; ~80% de abertura no WhatsApp | P1 | https://www.sprinklr.com/stories/latin-american-telecom/ |
-| Vivo | Brasil / telecom | Service, Social | ~1 milhão de mensagens/ano nas redes, sem querer contratar | -65% no tempo médio de resposta; 70% das respostas com Smart Responses; +137% de elogios espontâneos | P3 | https://www.sprinklr.com/stories/vivo/ |

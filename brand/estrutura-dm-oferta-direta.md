@@ -1,5 +1,7 @@
 # Estrutura de DM de oferta direta ("sincerão")
 
+> Para o Raul: sempre "Oi", sem abreviações ("vc", "pq", "tb") e com ortografia correta. `brand/voice-outbound.md` prevalece sobre os exemplos abaixo.
+
 Padrão para toda DM que apresenta uma oferta direto (curso, serviço, produto), sem fingir que é só networking. Para conversa de relacionamento sem oferta, vale o `voice-outbound.md`.
 
 Carregar junto com `voice-outbound.md` (registro, proibições) antes de escrever. Os exemplos abaixo são pontos de partida: adapte à sua voz e ao seu lead.

@@ -1,6 +1,6 @@
 # Design system
 
-> Status: PROPOSTA (2026-10-11), aguardando OK do Raul. Identidade própria, propositalmente diferente da Sprinklr: tom editorial e quente (papel, grafite, terracota), serifa nos títulos. Não usar logo, cores ou fontes da Sprinklr.
+> Status: APROVADO pelo Raul em 2026-10-11. Identidade própria, propositalmente diferente da Sprinklr: tom editorial e quente (papel, grafite, terracota), serifa nos títulos. Não usar logo, cores ou fontes da Sprinklr.
 
 > Spec de valores para qualquer visual (carrossel, post, slide, LP). Preencha antes de gerar o primeiro visual.
 

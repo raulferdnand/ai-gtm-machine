@@ -20,7 +20,7 @@ Fonte de verdade da base: `signals/` e `outbound/` ({{nome do arquivo}}).
 ## 2. Estratégia
 
 - **Oferta:** Sprinklr Service, da plataforma Unified-CXM da Sprinklr (contact center omnichannel, agentes de IA). Provas: Leader no Gartner MQ de Social Media Management and Listening e de Voice of Customer Platforms (2026); 3M reduziu 90% do tempo de resposta a casos
-- **Ímã (material rico):** Raio-X do atendimento: 12 casos com números, por setor (comment-gate). Vive em `conteudo/`
+- **Ímã (material rico):** Raio-X do atendimento: casos públicos com números, por setor (comment-gate). Vive em `conteudo/`
 - **Ideia da campanha:** "Atendimento sem silos". Atendimento caro quase sempre é problema de canais apartados e descentralizados, não de gente; quem unificou reduziu tempo e custo sem contratar
 - **Objetivo:** 20 reuniões com líderes de CX em 8 semanas
 - **Métrica norte:** reuniões agendadas por semana (meta 2,5)
