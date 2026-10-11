@@ -40,8 +40,8 @@ Liste palavras, estruturas e vícios que você NÃO usa. Exemplos de partida:
 Fonte das provas: casos públicos da Sprinklr, detalhados em `brand/provas.md`.
 
 ## 6. CTAs aprovados
-1. **Comment-gate:** "Comente {{PALAVRA}} que eu te mando {{material}}."
-2. **Comunidade:** {{texto + {{LINK_COMUNIDADE}}}}
+1. **Comment-gate:** A definir (sugestão: "Comente CASES que eu te mando os 12 casos com os números, por setor." Depende de criar o material).
+2. **Conversa:** "Me chama no direct que te mostro o caso do seu setor."
 Regra: um CTA por post. Nunca empilhar dois.
 
 ## 7. Filtro pré-publicação (5 perguntas)
