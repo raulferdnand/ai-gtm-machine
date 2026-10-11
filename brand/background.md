@@ -14,12 +14,11 @@
 
 ## Pontos de contato (gancho com leads)
 - Ex-empresas: Salesforce, Accountfy, Leads2b, EADBOX, Volvo Trucks
-- Clientes atendidos na Salesforce (gancho prioritário): {{CLIENTES_SALESFORCE}}
+- Clientes atendidos na Salesforce (gancho prioritário): empresas médias e grandes de todos os segmentos. Gancho com o lead: experiência de dentro com CRM e atendimento em empresas do porte dele
 - Escolas / universidades: UFPR (Administração, 2010-2014); MBA USP/Esalq (Gestão de Negócios, em curso); European College Management (inglês, 2015); Escola Conquer (vendas e negociação)
 - Cidades / países: Curitiba (PR), São Paulo (SP), Brasil
 - Comunidades e eventos: AIESEC (voluntário, 2011-2012)
 - Ferramentas e stacks que domina: Salesforce (Service Cloud, CRM), Sprinklr, HubSpot (Inbound); metodologias Sandler, BANT, SPIN Selling, Receita Previsível, Challenger (Matthew Dixon)
 
 ## Histórias prontas (1 parágrafo cada)
-- Um erro seu que virou aprendizado: {{...}}
 - Um resultado seu que você pode citar com número: Na Salesforce, fechei o FY24 com 120% da cota de ACV gerada por mim, atendendo contas mid-market de várias indústrias.

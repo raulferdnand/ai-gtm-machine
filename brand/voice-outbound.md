@@ -5,7 +5,7 @@
 
 ## Sobre você (usado para achar pontos em comum com o lead)
 - Trajetória em 3 linhas: Mais de 8 anos em vendas B2B de SaaS. Na Salesforce (2022-2024), atendi contas mid-market multi-indústria e bati 120% da cota de ACV no FY24. Hoje, na Sprinklr, atendo grandes empresas no Brasil em CX e Marketing.
-- Empresas onde trabalhou: Sprinklr (atual), Salesforce, Accountfy, Leads2b, EADBOX, Volvo Trucks. Clientes atendidos na Salesforce: {{CLIENTES_SALESFORCE}}
+- Empresas onde trabalhou: Sprinklr (atual), Salesforce, Accountfy, Leads2b, EADBOX, Volvo Trucks. Na Salesforce, atendia empresas médias e grandes de todos os segmentos.
 - Cidades / escolas / comunidades / eventos em que esteve: Curitiba e São Paulo; UFPR (Administração); MBA USP/Esalq (Gestão de Negócios, em curso); intercâmbio de inglês no European College Management (2015); AIESEC (voluntário); Escola Conquer
 - Temas em que você tem autoridade real: CRM e atendimento ao cliente (certificação Service Cloud), prospecção outbound (Receita Previsível), vendas enterprise, unificação de canais e dados em CX e Marketing
 
