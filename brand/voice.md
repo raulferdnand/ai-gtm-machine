@@ -10,9 +10,9 @@
 
 ## 2. Arquétipo e tom
 Escolha UM arquétipo e descreva em 2 linhas como ele soa.
-- Arquétipo: {{ex: *Engenheiro prático: começa pelo valor, mostra o processo, nunca o hype*}}
-- Tom: {{ex: *explica para gente de negócio inteligente, sem jargão de guru*}}
-- Humor: {{ex: *seco, em UMA linha por post*}}
+- Arquétipo: Consultor prático: começa pelo problema do cliente, mostra número e caso, zero hype
+- Tom: direto e consultivo, fala de igual para igual com líderes de CX e Marketing, sem jargão de guru
+- Humor: leve, no máximo uma linha por post
 
 ## 3. Regras de voz (o que sempre vale)
 - Primeira linha direta e específica, nunca genérica.
