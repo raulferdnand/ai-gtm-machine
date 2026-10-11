@@ -4,7 +4,7 @@
 - Pilar: P2 (canais e dados unificados)
 - Hook: 4 (escolhido pelo Raul)
 - CTA: conversa (sem comment-gate)
-- Status: RASCUNHO, aguardando revisão do Raul. Publicação manual.
+- Status: APROVADO pelo Raul em 2026-10-11. Publicação manual pelo Raul.
 
 ---
 

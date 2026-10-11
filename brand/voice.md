@@ -12,6 +12,7 @@
 Escolha UM arquétipo e descreva em 2 linhas como ele soa.
 - Arquétipo: Consultor prático: começa pelo problema do cliente, mostra número e caso, zero hype
 - Tom: direto e consultivo, fala de igual para igual com líderes de CX e Marketing, sem jargão de guru
+- Registro: formal e corporativo, de executivo para executivo. Preferir termos de gestão ("alto volume de atendimento", "demandas repetitivas", "operação") a expressões coloquiais ("fila grande", "pedido"). Validado pelo Raul em 2026-10-11 no post de 13/10.
 - Humor: leve, no máximo uma linha por post
 
 ## 3. Regras de voz (o que sempre vale)
