@@ -22,7 +22,7 @@ Registro: primeiro nome feminino, ambíguo ou desconhecido → POLIDO ("Oi"). Ma
 - Solto: Opa {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Bora conectar?
 - Polido: Oi {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Vamos conectar?
 
-**Nota B: gancho da empresa** (≈ 160 caracteres)
+**Nota B: gancho da empresa** (≈ 170 caracteres)
 - Solto: Opa {nome}, tudo bem? Vi que vc é responsável pelo atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Bora conectar?
 - Polido: Oi {nome}, tudo bem? Vi que vc é responsável pelo atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Vamos conectar?
 
