@@ -1,5 +1,7 @@
 # Design system (TEMPLATE)
 
+> Status: A definir (pulado no /setup em 2026-10-11). Preencher antes de produzir qualquer peça visual.
+
 > Spec de valores para qualquer visual (carrossel, post, slide, LP). Preencha antes de gerar o primeiro visual.
 
 ## Cores

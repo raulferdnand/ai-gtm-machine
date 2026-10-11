@@ -27,7 +27,7 @@ Ao mexer num script aqui, **copiar pra `~/gtm-automation/`** ou a mudança não 
    ```json
    {
      "post_id": "...", "post_url": "...", "trigger_word": "humano",
-     "author_slug": "{{SEU_LINKEDIN_SLUG}}",
+     "author_slug": "raulcorreapereira",
      "apify_actor": "harvestapi/linkedin-post-comments",
      "max_items": 500, "processed_csv": "signals/processed.csv",
      "default_date": "AAAA-MM-DD",
@@ -140,7 +140,7 @@ Respostas de comentário público (exemplos, randomizar V1-V3 e adaptar à sua v
 
 - **Dedup por `linkedin_identifier`**, nunca por nome: a busca da Nuvia é sensível a acento ("Fabrizio" ≠ "Fabrízio").
 - Relação anterior fora do CRM (DM manual, WhatsApp) é invisível pro dedup: a Nuvia não sincroniza histórico do LinkedIn. Contato que você já conhece pode entrar como lead novo sem erro nenhum do fluxo.
-- **Seu próprio perfil (`{{SEU_LINKEDIN_SLUG}}`) nunca entra na coleta.**
+- **Seu próprio perfil (`raulcorreapereira`) nunca entra na coleta.**
 - Todo contato leva nome, `linkedin_identifier` e `job_title` (headline, vem de graça no `actor.position`). Telefone-sentinela `9990000XX` com checagem de livre na base antes.
 - Escrita de `additional_attributes` por REST é **PUT com round-trip** (GET → altera → PUT com todos os campos). Não existe PATCH; PUT sem os campos apaga o que faltar.
 
