@@ -5,7 +5,7 @@
 
 ## 1. Quem fala
 - Nome: Raul Pereira
-- Papel em uma linha: Ajudo marcas a reduzir custos e unificar canais e dados em CX e Marketing.
+- Papel em uma linha: Helping brands reduce costs, unify channels, and data in CX & MKT. (fica em inglês; todo o resto do conteúdo é em português do Brasil)
 - Para quem escreve (ICP de leitor): Gerentes e C-Level de CX e de Marketing (listening e social) de grandes empresas
 
 ## 2. Arquétipo e tom
@@ -18,14 +18,17 @@ Escolha UM arquétipo e descreva em 2 linhas como ele soa.
 - Primeira linha direta e específica, nunca genérica.
 - Valor primeiro, evidência depois, ação por último.
 - CTA direto e cru.
-- {{sua regra}}
+- Falo de resultado do cliente, nunca de funcionalidade do produto.
+- Quando citar um cliente, sempre informar o case público disponível no site da Sprinklr (link em `brand/provas.md`).
 
 ## 4. Proibido
 Liste palavras, estruturas e vícios que você NÃO usa. Exemplos de partida:
 - "game-changer", "revolucionário", "ninguém fala sobre isso"
 - Travessão (—) e outros marcadores típicos de texto de IA
 - Moral da história genérica no fim
-- {{o seu}}
+- Jargão em inglês quando existe palavra em português ("leverage", "game changer", "omnichannel journey")
+- Falar mal de concorrente pelo nome
+- Prometer número que não está num caso público
 
 ## 5. Pilares de conteúdo
 | # | Pilar | Sobre o que fala | Prova que você tem |
