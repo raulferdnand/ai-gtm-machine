@@ -1,6 +1,7 @@
 # Mensagens-base: campanha CX
 
 > Template é BASE, nunca produto final. Antes de cada envio: buscar o sinal de conexão do lead (tabela abaixo), escolher o registro (solto ou polido) e rodar `humanize-pt-br`. Nada sai sem revisão do Raul.
+> Nunca usar: "Trabalho com" e "vi que vc cuida" (o certo é "vi que vc atua" ou "é responsável").
 > Placeholders: `{nome}`, `{empresa}`, `{caso}`, `{numero_do_caso}`, `{link_do_caso}`.
 
 ## 1. Sinal de conexão (usar o primeiro que existir)
@@ -17,27 +18,27 @@ Registro: primeiro nome feminino, ambíguo ou desconhecido → POLIDO ("Oi"). Ma
 
 ## 2. Nota de conexão (máx. 300 caracteres, alvo 180)
 
-**Nota A: tema CX** (≈ 150 caracteres)
-- Solto: Opa {nome}, tudo bem? Trabalho com atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Bora conectar?
-- Polido: Oi {nome}, tudo bem? Trabalho com atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Vamos conectar?
+**Nota A: tema CX** (≈ 165 caracteres)
+- Solto: Opa {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Bora conectar?
+- Polido: Oi {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil e gosto de trocar ideia com quem lidera CX no dia a dia. Vamos conectar?
 
 **Nota B: gancho da empresa** (≈ 160 caracteres)
-- Solto: Opa {nome}, tudo bem? Vi que vc cuida do atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Bora conectar?
-- Polido: Oi {nome}, tudo bem? Vi que vc cuida do atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Vamos conectar?
+- Solto: Opa {nome}, tudo bem? Vi que vc é responsável pelo atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Bora conectar?
+- Polido: Oi {nome}, tudo bem? Vi que vc é responsável pelo atendimento da {empresa}. Acompanho de perto como operações desse tamanho organizam os canais. Vamos conectar?
 
 Teste A/B: metade da lista recebe A, metade recebe B nas semanas 1 e 2. Fica a que tiver maior aceite.
 
 ## 3. DMs (máx. 5 linhas, uma pergunta só, sem pedir reunião antes da DM 3)
 
 **DM 1: contexto** (logo depois do aceite)
-> Valeu por aceitar, {nome}. Fiquei curioso com uma coisa: como o atendimento da {empresa} se divide hoje entre WhatsApp, redes sociais e telefone?
+> Valeu por aceitar, {nome}. Fiquei curioso com uma coisa: como o atendimento da {empresa} se divide hoje entre WhatsApp, redes sociais e demais canais digitais?
 
 **DM 2: valor** (D+4, com caso público do setor)
 > {nome}, lembrei de vc lendo o caso {caso}: {numero_do_caso}. Tá aqui o caso completo: {link_do_caso}
 > Na {empresa}, o que mais pesa hoje no custo do atendimento?
 
-**DM 3: convite** (D+7, último toque)
-> {nome}, último recado pra não lotar sua caixa. Separei os casos de atendimento com número que mais se parecem com a operação da {empresa}. Se fizer sentido, te mostro em 20 minutos. Que dia costuma ser mais tranquilo pra vc?
+**DM 3: convite** (D+7, último toque). CTA padrão da campanha: "Faz sentido aprofundar o tema?" (nunca pedir reunião direto)
+> {nome}, último recado pra não lotar sua caixa. Separei os casos de atendimento com número que mais se parecem com a operação da {empresa}. Faz sentido aprofundar o tema?
 
 Quando o Raio-X estiver pronto, a DM 3 passa a citar o material: "Montei um raio-X com 12 casos de atendimento por setor, com os números."
 
@@ -60,5 +61,5 @@ Sempre com o link do case público (regra do `brand/voice.md`).
 
 - Espelhar o registro e o tamanho da resposta.
 - Se falar de dor (custo, fila, canal), aprofundar com mais uma pergunta antes de propor qualquer coisa.
-- Se perguntar o que você faz: uma frase ("Trabalho na Sprinklr, com atendimento e redes de grandes marcas") e volta a pergunta para ele.
-- Reunião só depois de a dor aparecer na conversa. Proposta: 20 minutos, dois horários fechados.
+- Se perguntar o que você faz: uma frase ("Sou da Sprinklr, atuo com atendimento e redes de grandes marcas") e volta a pergunta para ele.
+- Depois que a dor aparecer na conversa, convidar com "Faz sentido aprofundar o tema?". Só fala de agenda quando a pessoa disser que sim.

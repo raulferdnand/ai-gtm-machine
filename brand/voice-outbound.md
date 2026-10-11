@@ -21,6 +21,9 @@
 - Falar mal de concorrente pelo nome
 - Prometer número que não está num caso público (ver `brand/provas.md`)
 - Jargão em inglês quando existe palavra em português
+- "Trabalho com" (em qualquer mensagem)
+- "Vi que você cuida": o certo é "vi que você atua" ou "vi que você é responsável"
+- Pedir reunião direto. O convite é sempre: "Faz sentido aprofundar o tema?"
 
 ## Anatomia de uma boa primeira mensagem
 1. Gancho que só serve para ESTA pessoa (fato verificável do perfil/post)

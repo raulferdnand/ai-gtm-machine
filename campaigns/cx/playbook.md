@@ -45,7 +45,7 @@ Máximo de toques: 4 LinkedIn (convite + 3 DMs) + 3 e-mails.
 | D+2 | LinkedIn / e-mail | msg 1 | `outbound/` |
 | D+4 | LinkedIn / e-mail | msg 2 | `outbound/` |
 | D+7 | LinkedIn / e-mail | msg 3 (último toque) | `outbound/` |
-| Ao responder | | aprofundar a dor com pergunta; oferecer o caso do setor; propor reunião de 20 min | |
+| Ao responder | | aprofundar a dor com pergunta; oferecer o caso do setor; convidar com "Faz sentido aprofundar o tema?" | |
 | Sem resposta | | segue impactado pelo conteúdo orgânico | |
 
 Voz: `brand/voice-outbound.md` (1:1, registro de WhatsApp, curto).

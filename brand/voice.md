@@ -29,6 +29,7 @@ Liste palavras, estruturas e vícios que você NÃO usa. Exemplos de partida:
 - Jargão em inglês quando existe palavra em português ("leverage", "game changer", "omnichannel journey")
 - Falar mal de concorrente pelo nome
 - Prometer número que não está num caso público
+- "Trabalho com"
 
 ## 5. Pilares de conteúdo
 | # | Pilar | Sobre o que fala | Prova que você tem |
