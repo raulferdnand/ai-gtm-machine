@@ -61,7 +61,7 @@ O headline não diz onde a pessoa trabalha hoje. Para aplicar os eliminatórios 
 5. Grave em `signals/perfis-empresa.csv` (slug, empresa, cargo, status, cnpj, cnae, porte, fonte) e as colunas EMP + `is_empresa_elegivel` (`true`, `false` ou `verificar`), `anchor_case` (`itau` financeiro, `magalu` varejo e consumo), `tier_conta` (A elegível, B verificar, fora) e `motivo_empresa` no `lista-influenciador.csv`.
 6. Excel bruto em `signals/lista-influenciador-bruto.xlsx`: abas resumo (fórmulas de %), bruto, pessoa elegível e lista final.
 
-Primeira rodada (CX, 10/2026): 229 engajados, 23 pessoas elegíveis (10,0%), 4 empresas tier A e 2 a verificar (2,6% dos engajados).
+Primeira rodada (CX, 10/2026): 229 engajados, 23 pessoas elegíveis (10,0%), 4 empresas tier A e 2 a verificar (2,6% dos engajados). As 2 a verificar (Nissan, Align) foram confirmadas pelo aluno e subiram para tier A: lista final com 6 contas tier A. Tier B só se resolve com confirmação humana (quem vende conhece a base de clientes).
 
 ## Etapa 2 obrigatória: gravar os campos na Nuvia
 
