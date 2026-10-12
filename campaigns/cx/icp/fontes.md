@@ -1,6 +1,6 @@
 # Fontes públicas do ICP: Sprinklr no Brasil
 
-Base: `filtros.md` (EMP-01 a EMP-35, PES-01 a PES-17 e campos calculados). Para cada critério, as 5 melhores fontes públicas em ordem de prioridade: a primeira é a que mais resolve com menos esforço. Critérios com (!) não têm fonte pública que responda direto; as fontes listadas dão só indício e o valor final vem da conversa com a conta.
+Base: `filtros.md` (EMP-01 a EMP-35, PES-02 a PES-17 e campos calculados). Para cada critério, as 5 melhores fontes públicas em ordem de prioridade: a primeira é a que mais resolve com menos esforço. Critérios com (!) não têm fonte pública que responda direto; as fontes listadas dão só indício e o valor final vem da conversa com a conta.
 
 Esforço de extração:
 - **Baixo:** dado aberto, CSV, API ou uma página única por empresa.
@@ -53,7 +53,6 @@ Esforço de extração:
 
 | Critério | Campo | Fontes (1 = melhor) |
 |---|---|---|
-| PES-01 · Título com palavra-chave-alvo | `is_titulo_alvo` | 1. Perfil público do LinkedIn · 2. Google X-ray · 3. Apollo · 4. RocketReach · 5. Agendas de eventos (cargo do palestrante) |
 | PES-02 · Gerente ou acima | `is_gerente_ou_acima` | 1. Perfil público do LinkedIn · 2. Google X-ray · 3. Apollo · 4. RocketReach · 5. Site institucional (página de liderança) |
 | PES-03 · Diretor ou acima | `is_diretor_ou_acima` | 1. Perfil público do LinkedIn · 2. CVM, Formulário de Referência (estatutários) · 3. Site de RI (diretoria) · 4. Apollo · 5. Google Notícias (porta-voz) |
 | PES-04 · Área CX, SAC ou Ouvidoria | `is_area_cx` | 1. Perfil público do LinkedIn · 2. Banco Central, ouvidores cadastrados · 3. Google X-ray · 4. Consumidor Moderno (entrevistas) · 5. Agenda do CONAREC |
@@ -79,7 +78,7 @@ Esforço de extração:
 | `anchor_case` | EMP-01 (`itau` para financeiro, `magalu` para varejo e consumo) |
 | `score_empresa` | Soma dos EMP que pontuam |
 | `tier_conta` | `is_empresa_elegivel` + `score_empresa` |
-| `is_pessoa_elegivel` | PES-01, PES-02 e (PES-04, 05, 06, 07 ou 17) |
+| `is_pessoa_elegivel` | PES-02 e (PES-04, 05, 06, 07 ou 17) |
 
 ## 2. Catálogo de fontes
 

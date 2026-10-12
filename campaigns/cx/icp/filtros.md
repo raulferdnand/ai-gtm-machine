@@ -46,7 +46,6 @@
 
 | Critério | Campo | Fonte pública |
 |---|---|---|
-| PES-01 · Título com palavra-chave-alvo | `is_titulo_alvo` | Perfil público do LinkedIn |
 | PES-02 · Gerente ou acima | `is_gerente_ou_acima` | Perfil público do LinkedIn |
 | PES-03 · Diretor ou acima | `is_diretor_ou_acima` | Perfil público do LinkedIn; CVM, Formulário de Referência (diretores estatutários) |
 | PES-04 · Área CX, Atendimento, SAC ou Ouvidoria | `is_area_cx` | Perfil público do LinkedIn; Banco Central (ouvidores cadastrados) |
@@ -72,4 +71,4 @@
 | Âncora de referência (case a usar) | `anchor_case` | Derivado de EMP-01: `itau` para financeiro, `magalu` para varejo e consumo |
 | Soma dos critérios que pontuam | `score_empresa` | Derivado dos campos EMP que pontuam |
 | Tier da conta (A, B, C ou fora) | `tier_conta` | Derivado de `is_empresa_elegivel` e `score_empresa` |
-| Pessoa elegível | `is_pessoa_elegivel` | Derivado de PES-01, PES-02 e (PES-04, 05, 06, 07 ou 17) |
+| Pessoa elegível | `is_pessoa_elegivel` | Derivado de PES-02 e (PES-04, 05, 06, 07 ou 17) |

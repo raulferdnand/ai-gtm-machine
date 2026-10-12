@@ -40,6 +40,14 @@ Chaves do JSON (exemplo em `campaigns/cx/icp-vocab.json`): `excluir_empresa` (so
 
 Ao mudar o vocab, apague os `<prefixo>_*.csv` antes de rodar de novo, senão o `icp_manual()` congela o resultado antigo.
 
+## Etapa 1b: filtro de pessoa do ICP (`filtro_pessoa.py`)
+
+Aplica `campaigns/cx/icp/filtros.md` sobre o CSV triado: `is_pessoa_elegivel` = PES-02 (gerente ou acima) e alguma área (PES-04, 05, 06, 07 ou 17). A PES-01 (palavra-chave no título) foi retirada do ICP. Grava os campos `is_*` e imprime o % que sobrou e o motivo de cada corte.
+
+```bash
+python3 automations/leads/filtro_pessoa.py campaigns/cx/signals/cx-infl_nao_conectados.csv campaigns/cx/signals/lista-influenciador.csv <total_engajados>
+```
+
 Tamanho da empresa não vem do LinkedIn: confirme os decisores na Nuvia (`search_brazil_companies` por domínio, grátis) antes de montar a lista.
 
 ## Etapa 2 obrigatória: gravar os campos na Nuvia

@@ -116,12 +116,6 @@ São 6 eliminatórios e 29 critérios que pontuam (EMP-28 só entra quando a inf
 
 ## ICP Pessoa
 
-### Cargo
-
-| ID | Critério | "Sim" quando | Tipo |
-|---|---|---|---|
-| PES-01 | O título tem uma palavra-chave-alvo? | CX, Customer Experience, Experiência do Cliente, Voz do Cliente, VoC, Atendimento, SAC, Contact Center, Central de Relacionamento, Operações de Atendimento, Planejamento de Atendimento, WFM, Qualidade/Monitoria, Relacionamento com Cliente, Ouvidoria, Social Media, Mídias Sociais, Social Commerce, Social Intelligence, Consumer Insights, Marketing Digital, Conteúdo, Marca/Brand, Comunicação, Experiência do Seller ou Parceiros | E |
-
 ### Senioridade
 
 | ID | Critério | "Sim" quando | Tipo |
