@@ -45,8 +45,22 @@ Ao mudar o vocab, apague os `<prefixo>_*.csv` antes de rodar de novo, senão o `
 Aplica `campaigns/cx/icp/filtros.md` sobre o CSV triado: `is_pessoa_elegivel` = PES-02 (gerente ou acima) e alguma área (PES-04, 05, 06, 07 ou 17). A PES-01 (palavra-chave no título) foi retirada do ICP. Grava os campos `is_*` e imprime o % que sobrou e o motivo de cada corte.
 
 ```bash
-python3 automations/leads/filtro_pessoa.py campaigns/cx/signals/cx-infl_nao_conectados.csv campaigns/cx/signals/lista-influenciador.csv <total_engajados>
+python3 automations/leads/filtro_pessoa.py campaigns/cx/signals/cx-infl_nao_conectados.csv <saida.csv> <total_engajados> [vocab.json]
 ```
+
+Não grave a saída por cima de `lista-influenciador.csv` depois que ele já tiver as colunas de empresa (Etapa 1c): elas se perdem.
+
+Como lê o headline (revisado em 12/10/2026, depois que o loop de ICP recuperou 11 pessoas que o filtro tinha cortado):
+
+- **Headline inteiro**, quebrado por `|`, `·`, `•` e ` l `. Trechos de passado (`ex-`, `Formerly`, `Previously`, `anteriormente`, `passagem por`) são ignorados: empregador antigo não derruba ninguém ("Formerly ... Banco X" não é banco).
+- **Cargo** = todo trecho atual com palavra de gestão (gerente, head, diretor, executive, gestor...). Cargo de vendas e operação de mídia no 1º trecho (account executive, gestor de tráfego, analista) não conta.
+- **Área** tem que estar no trecho do cargo, senão é lista de competências. Duas exceções: gestor de Customer Success e gestor de Operações contam como CX/Operações quando o headline declara CX, atendimento ou customer operations.
+- **Sinônimos** de área: gestão de clientes, jornada do cliente, serviço ao cliente, pós-venda (CX); mkt, corporate affairs (Marketing); canais digitais, omnichannel (MarTech); e-commerce (Marketplace).
+- **Exclusões reconferidas** no texto atual (vocab da triagem): palestrante, mentor, advisor e afins só derrubam quando são o cargo principal; marca de vendor derruba sempre; dono de firma própria que vende palestra/consultoria e quem atua em Professional Services/Service Delivery são fornecedor; "Gestão de Fornecedores (BPO)" é quem contrata BPO e fica.
+- Imprime quem a triagem tinha excluído e o filtro reverteu, para revisão humana.
+- `demo()` trava os casos que já deram errado e aborta a execução se algum regredir.
+
+Resultado na campanha CX: 37 pessoas elegíveis (antes 23). Todas as 23 anteriores mais as 11 do loop; os 3 extras (HR Tech, incorporadora, resort) são decididos no filtro de empresa.
 
 Tamanho da empresa não vem do LinkedIn: confirme os decisores na Nuvia (`search_brazil_companies` por domínio, grátis) antes de montar a lista.
 
