@@ -27,7 +27,7 @@ from collections import Counter
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 # .../automations/leads -> raiz do projeto
-RAIZ = os.path.abspath(os.path.join(AQUI, "..", "..", ".."))
+RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 HERE = AQUI  # pasta dos dados do post; setada por --pasta
 CONEXOES = None  # resolvida em conexoes_mais_recentes()
 RUNTIME = os.path.expanduser("~/gtm-automation")
@@ -99,17 +99,23 @@ def conexoes_mais_recentes():
     import glob
     arqs = glob.glob(os.path.join(RAIZ, "Connections*.csv"))
     if not arqs:
-        raise SystemExit(f"nenhum Connections*.csv em {RAIZ} (exportar do LinkedIn)")
+        print(f"AVISO: nenhum Connections*.csv em {RAIZ}; todos saem como nao conectados "
+              "(exportar do LinkedIn antes de montar a sequencia)")
+        return None
     return max(arqs, key=os.path.getmtime)
 
 
 def carregar_conexoes():
+    if not CONEXOES:
+        return {}
     linhas = open(CONEXOES, encoding="utf-8").readlines()
     ini = next(i for i, l in enumerate(linhas) if l.startswith("First Name,"))
     return {slug(r["URL"]): r for r in csv.DictReader(linhas[ini:]) if r.get("URL")}
 
 
 def score_ledger():
+    if not os.path.exists(os.path.join(RUNTIME, "engagement_ledger.json")):
+        return {}  # campanha sem comment-gate: sem ledger, sem score
     pesos = json.load(open(os.path.join(RUNTIME, "weights.json")))
     ledger = json.load(open(os.path.join(RUNTIME, "engagement_ledger.json")))
 
@@ -121,6 +127,47 @@ def score_ledger():
         return s
 
     return {k: calc(v) for k, v in ledger.items()}
+
+
+VOCAB = {}  # setado por --vocab (vocabulario da campanha, ex. campaigns/cx/icp-vocab.json)
+
+
+def carregar_vocab(caminho):
+    """Troca ICP/NIVEL pelo vocabulario da campanha. Conteudo e dado: o ICP de
+    cada publico vive em campaigns/<publico>/icp-vocab.json, nao neste script."""
+    global ICP, NIVEL
+    v = json.load(open(caminho, encoding="utf-8"))
+    if v.get("icp"):
+        ICP = [tuple(x) for x in v["icp"]]
+    if v.get("nivel"):
+        NIVEL = [tuple(x) for x in v["nivel"]]
+    VOCAB.update(v)
+
+
+def segmento(texto):
+    """Filtros do vocabulario antes do ICP: excluir (some do CSV), fora de lista,
+    fornecedor e BPO. Devolve (rotulo, motivo) ou (None, "")."""
+    t = texto.lower()
+    if VOCAB.get("excluir_empresa") and re.search(VOCAB["excluir_empresa"], t):
+        return "EXCLUIR", "empresa vetada"
+    for nome, rx in VOCAB.get("fora_de_lista", {}).items():
+        if re.search(rx, t):
+            return "Fora", nome
+    if VOCAB.get("fornecedor") and re.search(VOCAB["fornecedor"], t):
+        return "Fornecedor", "consultor/palestrante/vendor"
+    if VOCAB.get("bpo") and re.search(VOCAB["bpo"], t):
+        return "BPO", "terceirizada de atendimento"
+    return None, ""
+
+
+def eh_decisor(icp, nivel, titulo=""):
+    """titulo = cargo atual (1o trecho do headline). nao_decisor do vocab derruba falso positivo."""
+    d = VOCAB.get("decisor")
+    if not d:
+        return ""
+    if VOCAB.get("nao_decisor") and re.search(VOCAB["nao_decisor"], titulo.lower()):
+        return "nao"
+    return "sim" if icp in d.get("icps", []) and nivel in d.get("niveis", []) else "nao"
 
 
 PREFIXO = ["mck"]  # setado no main; lista para o icp_manual enxergar sem passar argumento
@@ -149,12 +196,15 @@ def main():
     ap.add_argument("--pasta", required=True, help="pasta signals/ do post")
     ap.add_argument("--prefixo", help="prefixo dos CSVs de saida (default: derivado da pasta)")
     ap.add_argument("--conexoes", help="export de conexoes (default: o mais recente na raiz)")
+    ap.add_argument("--vocab", help="vocabulario de ICP da campanha (json). Default: o de Growth/Marketing deste script")
     args = ap.parse_args()
+    if args.vocab:
+        carregar_vocab(args.vocab)
     HERE = os.path.abspath(args.pasta)
     prefixo = args.prefixo or os.path.basename(os.path.dirname(HERE)).split("-")[0]
     global CONEXOES
     CONEXOES = os.path.abspath(args.conexoes) if args.conexoes else conexoes_mais_recentes()
-    print(f"conexoes: {os.path.basename(CONEXOES)} | pasta: {HERE} | prefixo: {prefixo}")
+    print(f"conexoes: {os.path.basename(CONEXOES) if CONEXOES else '-'} | pasta: {HERE} | prefixo: {prefixo}")
 
     conn = carregar_conexoes()
     scores = score_ledger()
@@ -162,7 +212,7 @@ def main():
     manual = icp_manual()
     novos = []
 
-    out = []
+    out, vetados = [], 0
     for l in csv.DictReader(open(os.path.join(HERE, "processed.csv"), encoding="utf-8")):
         s = urllib.parse.unquote(l["linkedin_identifier"]).lower()
         if s in EXCLUIR:
@@ -172,6 +222,12 @@ def main():
         conectado = "sim" if (grau == 1 or (grau is None and c)) else "nao"
         cargo = (c or {}).get("Position", "").strip()
         headline = l["headline"].strip()
+        seg, motivo = segmento(f"{cargo} {headline} {(c or {}).get('Company', '')}")
+        if seg == "EXCLUIR":
+            vetados += 1
+            continue
+        nivel = primeiro(NIVEL, (cargo or headline).lower(), "Outro")
+        icp = manual.get(s) or seg or icp_de(cargo, headline)
         out.append({
             "nome": l["name"],
             "slug": l["linkedin_identifier"],
@@ -180,18 +236,24 @@ def main():
             "empresa": (c or {}).get("Company", ""),
             "cargo": cargo,
             "headline": headline,
-            "nivel": primeiro(NIVEL, (cargo or headline).lower(), "Outro"),
-            "icp": manual.get(s) or icp_de(cargo, headline),
+            "nivel": nivel,
+            "icp": icp,
+            "decisor": eh_decisor(icp, nivel, cargo or re.split(r"[|·•]", headline)[0]),
+            "motivo": motivo,
             "score": scores.get(s, ""),
             "posts_tocados": l.get("posts_tocados", ""),
-            "contact_id": l["contact_id"],
-            "status": l["status"],
+            "influenciadores": l.get("influenciadores", ""),
+            "contact_id": l.get("contact_id", ""),
+            "status": l.get("status", ""),
         })
         if s not in manual:
             novos.append(out[-1])
 
     ordem = {n: i for i, (n, _) in enumerate(NIVEL)}
-    out.sort(key=lambda r: (ordem.get(r["nivel"], 9), -(r["score"] or 0)))
+    out.sort(key=lambda r: (r["decisor"] != "sim", ordem.get(r["nivel"], 9), -(r["score"] or 0),
+                            -int(r["posts_tocados"] or 0)))
+    if vetados:
+        print(f"vetados por empresa (fora do CSV): {vetados}")
 
     for nome, rows in (("conectados", [r for r in out if r["conectado"] == "sim"]),
                        ("nao_conectados", [r for r in out if r["conectado"] == "nao"])):
@@ -201,6 +263,8 @@ def main():
             w.writeheader()
             w.writerows(rows)
         print(f"{nome}: {len(rows)}  {dict(Counter(r['icp'] for r in rows).most_common())}")
+    if VOCAB.get("decisor"):
+        print(f"decisores: {sum(r['decisor'] == 'sim' for r in out)}")
     print(f"\nleads NOVOS (icp por regex, precisa revisao manual): {len(novos)}")
     for r in novos:
         print(f"  {r['conectado']:<4} {r['icp']:<10} {r['slug'][:30]:<32} {(r['cargo'] or r['headline'])[:60]}")

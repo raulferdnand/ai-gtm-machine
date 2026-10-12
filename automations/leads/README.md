@@ -16,6 +16,32 @@ Saída: `<prefixo>_conectados.csv` e `<prefixo>_nao_conectados.csv` na pasta do 
 - `--conexoes` é opcional: sem ele, usa o **export mais recente** de `Connections*.csv` na raiz do projeto. A base envelhece rápido (186 conexões novas entre 16/08 e 17/08), então exportar de novo do LinkedIn antes de campanha grande.
 - `--prefixo` default vem do nome da pasta do post.
 
+- Sem `Connections*.csv` na raiz, o script avisa e segue: todo mundo sai como "não conectado". Sem `~/gtm-automation/engagement_ledger.json`, o score fica vazio.
+
+## Etapa 0 (lista por engajamento de posts de terceiros): consolidar por pessoa
+
+Quando o `engajamento.csv` vem do Apify (comentários + curtidas de vários posts), a mesma pessoa aparece com dois formatos de URL: o ator de curtidas devolve o ID interno (`/in/ACoAA...`), o de comentários devolve o slug. Sem unificar, a contagem por pessoa sai errada. Rode antes da triagem:
+
+```bash
+python3 automations/leads/consolidar_engajamento.py --entrada campaigns/<publico>/signals/engajamento.csv
+```
+
+Unifica por slug igual; ID interno vira slug quando nome + headline batem, ou quando o nome é único dos dois lados. Nunca só por nome solto. Reescreve a contagem no `engajamento.csv` e grava `processed.csv` na mesma pasta.
+
+## Vocabulário por campanha (`--vocab`)
+
+O vocabulário embutido no script é de Growth/Marketing. Campanha com outro ICP passa um JSON próprio (conteúdo é dado, não código):
+
+```bash
+python3 automations/leads/triagem_icp.py --pasta campaigns/cx/signals --prefixo cx-infl --vocab campaigns/cx/icp-vocab.json
+```
+
+Chaves do JSON (exemplo em `campaigns/cx/icp-vocab.json`): `excluir_empresa` (some do CSV), `fora_de_lista` (banco, agência), `fornecedor` (consultor, palestrante, vendor), `bpo`, `icp` e `nivel` (listas ordenadas), `nao_decisor` (cargo atual que derruba o decisor, ex. marketing manager, customer success, coordenador) e `decisor` (quais ICPs e níveis contam). Saem as colunas `decisor` e `motivo`, e a ordenação põe decisores primeiro.
+
+Ao mudar o vocab, apague os `<prefixo>_*.csv` antes de rodar de novo, senão o `icp_manual()` congela o resultado antigo.
+
+Tamanho da empresa não vem do LinkedIn: confirme os decisores na Nuvia (`search_brazil_companies` por domínio, grátis) antes de montar a lista.
+
 ## Etapa 2 obrigatória: gravar os campos na Nuvia
 
 A triagem só produz CSV. **Os campos não chegam na Nuvia sozinhos** — `POST /contacts` não

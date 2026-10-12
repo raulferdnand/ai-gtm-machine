@@ -1,0 +1,61 @@
+{
+  "_sobre": "Vocabulário de ICP da campanha CX (Sprinklr Service). Lido por automations/leads/triagem_icp.py --vocab. Ordem importa: a primeira regra que casar vence. Regex em minúsculas, sem acento obrigatório. nao_decisor: termos que tiram a pessoa da lista de decisores mesmo com ICP e nível certos.",
+  "excluir_empresa": "\\b(vivo|telef[ôo]nica)\\b",
+  "fora_de_lista": {
+    "banco": "\\b(banco|bank|banking|ita[úu]|bradesco|santander|nubank|btg|caixa econ[ôo]mica|sicredi|sicoob|banrisul|safra)\\b",
+    "agencia": "\\b(ag[êe]ncia|agency)\\b"
+  },
+  "fornecedor": "\\b(consultor\\w*|consultant|consultoria|consulting|palestrante|speaker|keynote|mentor\\w*|professor\\w*|autor\\w*|author|instrutor\\w*|treinador\\w*|coach|freelanc\\w*|sprinklr|zendesk|salesforce|genesys|blip|twilio|freshworks|hubspot|zenvia|talkdesk|five9|nice incontact|verint|medallia|qualtrics|solides|peoplexperience|conquist|grupo padr[ãa]o|consumidor moderno|cx brain|botmaker|take blip|octadesk|movidesk|sinch|infobip|gupshup|co-?autor\\w*|telecom expense|myra|yappa|ecoxistema|birdie|ipsos|harmo|solution delivery|solutions? architect|pre.?sales|pr[ée].?vendas|account executive|executiv[oa] de contas|business development|sdr|bdr)\\b",
+  "bpo": "\\b(bpo|atento|teleperformance|aec\\b|concentrix|almaviva|tivit|foundever|sitel|tp brasil|neobpo|algar tech|elo group|call center terceiriz\\w*)\\b",
+  "icp": [
+    [
+      "CX",
+      "(\\bcx\\b|customer experience|experi[êe]ncia d[oe]s? (cliente|consumidor)|customer service|customer care|atendimento|\\bsac\\b|contact.?cent|call.?cent|central de relacionamento|relacionamento com (o )?cliente|ouvidoria|chief customer|\\bcco\\b|voz do cliente|voice of (the )?customer|servi[çc]o ao cliente|p[óo]s.?venda|customer operations|opera[çc][õo]es de cliente)"
+    ],
+    [
+      "CS",
+      "(customer success|sucesso do cliente)"
+    ],
+    [
+      "Operações",
+      "(\\bcoo\\b|chief operating|diretor\\w* de opera[çc][õo]es|head de opera[çc][õo]es|operations director|vp (de )?opera[çc][õo]es)"
+    ],
+    [
+      "Digital",
+      "(transforma[çc][ãa]o digital|digital transformation|\\bcdo\\b|chief digital|canais digitais|omnichannel|omnicanal)"
+    ]
+  ],
+  "nivel": [
+    [
+      "C-level",
+      "\\b(ceo|cfo|coo|cto|cmo|cio|cdo|cco|cxo|c-level|chief|presidente|vice.?presiden\\w*|vp|superintendente)\\b"
+    ],
+    [
+      "Diretoria",
+      "\\b(diretor\\w*|director|head\\b|head of|head de)\\b"
+    ],
+    [
+      "Gerência",
+      "\\b(gerente|manager|gestor\\w*)\\b"
+    ],
+    [
+      "Coordenação",
+      "\\b(coordenador\\w*|coordinator|supervisor\\w*|l[íi]der|lead\\b|especialista|specialist|analista|analyst)\\b"
+    ],
+    [
+      "Dono",
+      "\\b(founder|fundador\\w*|co-?founder|s[óo]ci[oa]|owner|partner|empres[áa]ri[oa])\\b"
+    ]
+  ],
+  "decisor": {
+    "icps": [
+      "CX"
+    ],
+    "niveis": [
+      "C-level",
+      "Diretoria",
+      "Gerência"
+    ]
+  },
+  "nao_decisor": "(marketing manager|gerente de marketing|project manager|gerente de projetos?|product manager|gerente de produto|customer success|sucesso do cliente|service quality|quality manager|analista|analyst|especialista|specialist|coordenador\\w*|supervisor\\w*|estagi\\w*|intern\\b|trainee|student|estudante)"
+}
