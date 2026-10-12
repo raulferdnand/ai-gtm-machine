@@ -50,6 +50,19 @@ python3 automations/leads/filtro_pessoa.py campaigns/cx/signals/cx-infl_nao_cone
 
 Tamanho da empresa não vem do LinkedIn: confirme os decisores na Nuvia (`search_brazil_companies` por domínio, grátis) antes de montar a lista.
 
+## Etapa 1c: raspagem de perfil + filtro de empresa
+
+O headline não diz onde a pessoa trabalha hoje. Para aplicar os eliminatórios de empresa (EMP-01, 04, 08, 11, 21, 22), raspe o perfil de quem passou na 1b:
+
+1. **Apify `harvestapi/linkedin-profile-scraper`**, input `{"profileScraperMode":"Profile details no email ($4 per 1k)","queries":[<urls>]}`. Custa US$ 0,004 por perfil. No plano free o limite é 10 itens por run: rode em lotes de até 10. Confirme o custo com o aluno antes.
+2. **Empresa atual** = `currentPosition`. Se vier vazio, use `experience[0]` e veja a data de fim: com fim preenchido a pessoa está sem empresa (sai da lista, mas vale acompanhar o próximo emprego).
+3. **Nuvia `search_brazil_companies`** (grátis): busque por `dominio`, não por nome (a busca por nome é difusa e traz ruído). Resultado grande: salve e filtre em python. Porte da Receita só diz ME/EPP/Demais, então 1000+ funcionários vem do LinkedIn da empresa ou de conhecimento público.
+4. **Regras fixas de exclusão:** banco, agência, BPO, vendor (martech, CPaaS), consultoria, autônomo, Vivo/Telefônica.
+5. Grave em `signals/perfis-empresa.csv` (slug, empresa, cargo, status, cnpj, cnae, porte, fonte) e as colunas EMP + `is_empresa_elegivel` (`true`, `false` ou `verificar`), `anchor_case` (`itau` financeiro, `magalu` varejo e consumo), `tier_conta` (A elegível, B verificar, fora) e `motivo_empresa` no `lista-influenciador.csv`.
+6. Excel bruto em `signals/lista-influenciador-bruto.xlsx`: abas resumo (fórmulas de %), bruto, pessoa elegível e lista final.
+
+Primeira rodada (CX, 10/2026): 229 engajados, 23 pessoas elegíveis (10,0%), 4 empresas tier A e 2 a verificar (2,6% dos engajados).
+
 ## Etapa 2 obrigatória: gravar os campos na Nuvia
 
 A triagem só produz CSV. **Os campos não chegam na Nuvia sozinhos** — `POST /contacts` não
