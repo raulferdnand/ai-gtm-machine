@@ -147,6 +147,16 @@ Voz: `brand/voice-outbound.md` (1:1, registro de WhatsApp, curto).
 | Lead D | Diretor de Relacionamento, mídia/internet (tier A) | Curtiu o estudo do Jacques Meir "O brasileiro entre o corre e o refúgio" | Nota A: consumidor espremido tem menos espaço para erro |
 | Lead E | Gerente de CX, benefícios (tier A) | Curtiu o mesmo estudo | Nota A: benefício como alívio no fim do mês |
 
+**Modelos de nota de conexão**: os padrões que funcionaram nas 6 contas tier A, todos ancorados no engajamento do lead.
+
+| Tipo de sinal | Modelo da nota (≤ 300 caracteres) |
+|---|---|
+| Comentou o post do influenciador | Oi [NOME], tudo bem? Li seu comentário sobre [TEMA] no post do [INFLUENCIADOR]. [Uma frase sobre a dor que o comentário toca]. Vamos conectar? |
+| Comentário com frase marcante | Oi [NOME], tudo bem? "[FRASE DO COMENTÁRIO]" Sua frase no post do [INFLUENCIADOR] resumiu [TEMA] melhor que o próprio post. Vamos conectar? |
+| Só reagiu / acompanha o influenciador | Oi [NOME], tudo bem? Vi que você acompanha o [INFLUENCIADOR]. [Uma frase ligando o post ao negócio do lead]. Vamos conectar? |
+
+Regras: "Oi" sempre, sem abreviação, sem travessão, sem "Trabalho com" nem "Vi que você cuida", uma pergunta leve no fim. Leads A, B e C têm versão B alternativa; nada enviado.
+
 Status: aguardando aprovação do Raul.
 
 Checar antes do disparo: variáveis `empresa` e `primeiro nome` carregando em todos os canais, testando cada canal separadamente (o bug costuma carregar no e-mail e falhar no LinkedIn).
