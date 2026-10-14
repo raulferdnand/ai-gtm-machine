@@ -16,7 +16,7 @@ Mapa da sua conta Nuvia (agentes, steps com IDs, campos, campanhas, listas, rece
 
 - **POPULAR lista = MCP `add_records`. SEMPRE.** O REST `POST /tables/{id}/rows` insere linha mas **NÃO vincula o contato** (`record_id: null` → linha órfã, tudo em branco na UI). Já foi testado com todos os shapes; nenhum linka. Não perca tempo com ele.
 - **REST exige User-Agent de navegador.** O WAF (Cloudflare) bloqueia `urllib`/`python-requests` sem UA com **403 `error code: 1010`**. Use `curl` (via subprocess) ou header `User-Agent: Mozilla/5.0 (...)`. 
-- **Criar contato exige telefone.** Leads sem telefone (ex. LinkedIn) precisam de um fictício **com dedup antes**.
+- **Criar contato:** MCP `create_contact` aceita só nome + UM identificador (telefone, e-mail OU `linkedin_identifier`) e já deduplica sozinho (e-mail → LinkedIn → telefone). Lead de LinkedIn NÃO precisa mais de telefone fictício. O bulk `create_contacts` ainda exige telefone em todo item (validado no schema em 2026-10-14).
 - **Créditos:** só `enrich_list` custa. Todo o resto (busca, CRM, listas, campanhas) é grátis.
 
 ## Auth / base
@@ -29,7 +29,8 @@ Mapa da sua conta Nuvia (agentes, steps com IDs, campos, campanhas, listas, rece
 |---|---|
 | Buscar contato no CRM | MCP `list_contacts` (busca nome/email/tel + filtro nativo `contact.linkedin_identifier`) ou REST `GET /contacts?filters=[...]` |
 | Dedup por telefone | MCP `find_contacts_by_phone` (≤50) ou REST `POST /contacts/find-by-phones {phones:["<cc><num>"]}` |
-| Criar contato | MCP `create_contacts` (bulk, exige phone) ou REST `POST /contacts` (exige name+country_code+phone_number) |
+| Criar contato | MCP `create_contact` (nome + telefone OU e-mail OU LinkedIn, dedup embutido) · MCP `create_contacts` (bulk ≤100, exige telefone) |
+| Atualizar contato | MCP `update_contact` / `update_contacts` (≤100). `additional_attributes` = merge por slug; `custom_fields` = campo `select`/`multi_select` por `option_id`; `business` liga o contato a uma empresa |
 | Criar lista | MCP `create_list` (sem dedup de nome — cheque `list_lists` antes) |
 | Criar coluna | MCP `add_list_column` (guarde os `key` UUID) |
 | Ler colunas/stats | MCP `get_list` ou REST `GET /tables/{id}` |
@@ -39,9 +40,49 @@ Mapa da sua conta Nuvia (agentes, steps com IDs, campos, campanhas, listas, rece
 | Deletar lista | REST `DELETE /tables/{id}` (204; **preserva contatos**) — MCP não deleta |
 | Deletar coluna | ❌ não existe via API → recriar a lista |
 | Campo custom **de contato** | escrita via `additional_attributes` (create/update); **criar o campo** = REST `POST /v1/custom-fields {title,type,context:'contact',description}` com **JWT de usuário** (`NUVIA_USER_JWT`, 201, testado 30/09/2026). Com API key = 401 |
-| Campanha: ler | MCP `list_campaigns` / `get_campaign` (read-only) |
+| Campanha: ler | MCP `list_campaigns` / `get_campaign` / `preview_campaign_message` (mensagem renderizada pra 1 lead) |
+| Campanha: criar/editar | MCP `create_campaign` (sempre nasce DRAFT) → `create_campaign_step` → `update_campaign_step` / `reorder_campaign_steps` / `delete_campaign_step` / `update_campaign` / `archive_campaign` (só DRAFT) |
+| Campanha: ativar | MCP `activate_campaign` com `confirmed:true` SÓ depois de confirmação explícita do usuário (dispara mensagens reais) |
 | Criar conversa / mover funil / atribuir agente | REST (ver memória `nuvia_rest_api_conversations`) |
-| **Bulk enroll** | REST `POST /campaigns/{id}/enrollments/bulk {contact_ids:[...]}` |
+| **Enroll** | MCP `create_campaign` com `audience_config` LIST/STATIC/FUNNEL materializa os contatos na criação (até 1000). Campanha já existente: REST `POST /campaigns/{id}/enrollments/bulk {contact_ids:[...]}` |
+
+## Inventário do MCP Nuvia (consultado em 2026-10-14, 65 tools)
+
+Custo: só `enrich_list` consome créditos. Todo o resto é grátis. "Tenant" = opera só dentro da empresa logada (`whoami`).
+
+| Área | Tools | Tipo | Cuidado |
+|---|---|---|---|
+| Sessão | `whoami` | leitura | rodar antes de qualquer escrita (conta pode ser compartilhada) |
+| Busca global | `lookup_filter_values` → `search_businesses` / `search_prospects` | leitura | filtros de catálogo só com `value` do lookup; `job_title` é texto livre |
+| Busca Brasil (CNPJ) | `lookup_brazil_filter_values` → `search_brazil_companies` | leitura | resolver CNAE/cidade antes |
+| Cruzar bases | `link_brazil_to_global`, `link_global_to_brazil` | leitura | ponte por CNPJ/domínio, pode voltar `found:false` |
+| Busca → CRM | `save_search_results` → `get_save_status` | escrita assíncrona | até 2000 ids; `save_mode` contacts ou list |
+| Contatos | `list_contacts`, `find_contacts_by_phone` (≤50) | leitura | dedup por `linkedin_identifier`/telefone, nunca por nome |
+| Contatos | `create_contact`, `create_contacts` (≤100), `update_contact`, `update_contacts` (≤100) | escrita | ver Matriz |
+| Notas | `list_contact_notes`, `add_contact_note` (≤5000 caracteres) | leitura / escrita | autor = usuário logado |
+| Listas | `list_lists`, `get_list`, `list_records` | leitura | `get_list` antes de gravar (keys das colunas) |
+| Listas | `create_list`, `add_list_column` (≤20), `add_records` (≤100), `update_record`, `update_records` (≤100) | escrita | `create_list` não deduplica nome; editar coluna record email/telefone altera o contato |
+| Enriquecimento | `enrich_list` → `get_enrich_status` | escrita, **CUSTA** (e-mail 1, telefone 10 por contato) | confirmar com o usuário e checar o tamanho do recorte |
+| Conversas | `list_conversations` (status obrigatório), `list_messages` | leitura | não envia mensagem |
+| Inboxes e templates | `list_inboxes`, `list_whatsapp_templates` | leitura | |
+| Templates WhatsApp | `create_whatsapp_template` | escrita **IRREVERSÍVEL** (vai para a Meta) | confirmar texto e conta antes; conta no limite de 250 |
+| Campanhas | `list_campaigns`, `get_campaign`, `preview_campaign_message`, `list_funnels`, `list_users` | leitura | |
+| Campanhas | `create_campaign`, `create_campaign_step`, `update_campaign`, `update_campaign_step`, `reorder_campaign_steps`, `delete_campaign_step`, `archive_campaign` | escrita (só DRAFT) | não ativa nada |
+| Campanhas | `activate_campaign` | escrita, **DISPARA MENSAGENS REAIS** | `confirmed:true` só após OK explícito; LinkedIn/WhatsApp do Raul nunca sem aprovação |
+| Builder (agentes) | `builder_list_agents`, `builder_get_agent`, `builder_list_agent_flows`, `builder_agent_quality_stats`, `builder_simulate_conversation` (dry-run) | leitura | simulação não cria conversa real |
+| Builder (insumos) | `builder_list_custom_fields`, `builder_list_users`, `builder_list_teams`, `builder_list_businesses`, `builder_list_integrations`, `builder_list_skills`, `builder_get_skill` | leitura | usar o `id` do campo como `uuid` nas mentions |
+| HubSpot | `builder_hubspot_get_settings`, `builder_hubspot_list_owners`, `builder_hubspot_list_pipelines`, `builder_hubspot_list_properties` | leitura | só consulta; mapping não é gravável pelo MCP |
+
+### O que o MCP NÃO faz (precisa de UI ou REST com JWT de usuário)
+- Criar, editar ou apagar **campo personalizado** (UI, ou REST `POST /v1/custom-fields` com `NUVIA_USER_JWT`).
+- Criar ou editar **agente, etapa, mention ou follow-up** (builder na UI, ou REST interno `/v1/agent-steps/*` com JWT de usuário).
+- Apagar lista ou coluna (REST `DELETE /tables/{id}`; coluna não apaga).
+- Enviar mensagem, criar conversa ou mover conversa de etapa.
+- Enroll em campanha que já existe (REST bulk enroll).
+- Criar evento de calendário (a integração `google-calendar` existe na conta, mas não há tool).
+- Pausar campanha ativa.
+
+Neste ambiente de nuvem, `api.nuvia.ai` fica fora da lista de hosts permitidos: tudo que depende de REST só roda na máquina do usuário ou depois de liberar o host em claude.ai (Configurações > Capacidades).
 
 ## Conceitos que evitam erro
 - **Lista = "table" na REST.** Linha referencia 1 `contact_id`; a coluna `name` é auto-resolvida do contato (`source:'record'`).
@@ -61,7 +102,7 @@ Mapa da sua conta Nuvia (agentes, steps com IDs, campos, campanhas, listas, rece
 
 ## FLUXO B — Campanha + bulk enroll (quando o objetivo é ENVIAR)
 1. Contatos já existem (Fluxo A §1).
-2. **o usuário cria a campanha na UI** (inbox/sender + passos + agente) → passa o `campaign_id`. Campanhas atuais são `trigger_type: MANUAL` (não disparam sozinhas). Se não for MANUAL, teste com 1 contato antes (enroll pode acionar o agente e iniciar outreach real no LinkedIn).
+2. **Criar a campanha:** pelo MCP (`list_inboxes` → `list_funnels` → `create_campaign` em DRAFT → `create_campaign_step` por etapa → `get_campaign` + `preview_campaign_message` para conferir) ou o usuário cria na UI e passa o `campaign_id`. Ativar = `activate_campaign` com confirmação explícita. Campanhas atuais são `trigger_type: MANUAL` (não disparam sozinhas). Se não for MANUAL, teste com 1 contato antes (enroll pode acionar o agente e iniciar outreach real no LinkedIn).
 3. **Bulk enroll:** REST `POST /campaigns/{id}/enrollments/bulk {contact_ids:[...]}` (curl/UA; reaproveita `Nuvia.bulk_enroll` do `collect_to_nuvia.py`).
 4. **Limitações:** campanha não guarda colunas de dados (Fit/Msg → lista ou custom field). Envio é **template com variável** (`{{first_name}}`), não corpo único por lead — pra usar Msg personalizada, ela vira custom field de contato e o template referencia `{{msg_1}}`.
 
