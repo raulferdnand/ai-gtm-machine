@@ -1,6 +1,6 @@
 # Agente: clone de prospecção do Raul
 
-`system.md` é o system prompt (identidade, missão, regras, tom, expressões e palavras proibidas). É genérico para campanhas do segmento de CX/Marketing que vendam Sprinklr. O que é de cada campanha (sinal do lead, cadência, ângulo por cargo) entra nos campos do contato ou nas etapas do agente, não no system.
+`system.md` é o system prompt; `etapas.md` traz as 5 etapas do funil (identificação, consultivo, agendar, agendada, perdido) (identidade, missão, regras, tom, expressões e palavras proibidas). É genérico para campanhas do segmento de CX/Marketing que vendam Sprinklr. O que é de cada campanha (sinal do lead, cadência, ângulo por cargo) entra nos campos do contato ou nas etapas do agente, não no system.
 
 Status: aguardando aprovação do Raul. Não gravar na Nuvia antes do OK (regra do `CLAUDE.md`).
 
