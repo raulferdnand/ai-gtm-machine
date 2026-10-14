@@ -53,7 +53,7 @@ Regras aprendidas:
 **Anatomia:** "Última coisa:" → ponte do material pro sistema maior → a oferta → **os dois lados que ela serve** → pergunta fechada de baixo atrito.
 
 ```
-Oi {{var_contact_f_name}}!
+Olá {{var_contact_f_name}}!
 
 Última coisa: {{o material}} é uma peça de um sistema maior que eu uso pra {{o que o sistema faz}}.
 

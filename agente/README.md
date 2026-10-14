@@ -8,7 +8,7 @@ Status: aguardando aprovação do Raul. Não gravar na Nuvia antes do OK (regra 
 
 | Fonte | O que saiu dela |
 |---|---|
-| `brand/voice-outbound.md` (tom de voz 1:1) | registro, "Oi", "Obrigado", proibições, limites de caracteres e linhas, anatomia da 1ª mensagem |
+| `brand/voice-outbound.md` (tom de voz 1:1) | registro, "Olá", "Obrigado", proibições, limites de caracteres e linhas, anatomia da 1ª mensagem |
 | `brand/voice.md` | arquétipo, registro executivo, palavras proibidas de conteúdo |
 | `brand/background.md` | trajetória e pontos em comum |
 | `brand/provas.md` | tabela de casos (sem Telefónica e Vivo) |
@@ -16,7 +16,7 @@ Status: aguardando aprovação do Raul. Não gravar na Nuvia antes do OK (regra 
 | `campaigns/cx/outbound/mensagens-base.md` (mensagens revisadas) | sinais de conexão, DMs, respostas, expressões |
 | 4 conversas reais enviadas no chat (WhatsApp e LinkedIn, jul. a set. 2026) | expressões, apresentação da Sprinklr, convites de almoço/Swag/evento, quebra em mensagens curtas, emojis |
 
-Não encontrados: `mensagens.csv` e `tom-de-voz.md`. O tom de voz veio de `brand/voice-outbound.md`.
+`mensagens.csv` não existe (confirmado pelo Raul): as mensagens reais de referência são os 4 prints. `tom-de-voz.md` = `brand/voice-outbound.md`.
 
 ## Registro do humanize-pt-br
 
@@ -36,6 +36,4 @@ Das conversas reais, ficaram de fora por conflito com as regras: "Te add no Link
 
 ## Pendente
 
-1. Enviar `mensagens.csv` para calibrar as expressões com mais mensagens revisadas.
-2. Indicação interna ("{pessoa} participou do nosso evento"): de onde vem esse dado na Nuvia?
-3. Templates com "Oi" em `campaigns/cx/outbound/mensagens-base.md` e no playbook ainda não foram trocados para "Olá".
+1. Indicação interna ("{pessoa} participou do nosso evento"): de onde vem esse dado na Nuvia?

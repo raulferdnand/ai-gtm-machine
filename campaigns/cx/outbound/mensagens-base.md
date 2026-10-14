@@ -1,13 +1,13 @@
 # Mensagens-base: campanha CX
 
 > Template é BASE, nunca produto final. Antes de cada envio: buscar o sinal de conexão do lead (tabela abaixo) e rodar `humanize-pt-br`. Nada sai sem revisão do Raul.
-> Escrita: sempre "Oi", português do Brasil com ortografia e gramática corretas, sem abreviações (nada de "vc", "tb", "pq", "pra", "tá", "rs").
+> Escrita: sempre "Olá", português do Brasil com ortografia e gramática corretas, sem abreviações (nada de "vc", "tb", "pq", "pra", "tá", "rs").
 > Nunca usar: "Trabalho com", "vi que você cuida" (o certo é "vi que você atua" ou "é responsável") e pedido direto de reunião.
 > Placeholders: `{nome}`, `{empresa}`, `{caso}`, `{numero_do_caso}`, `{link_do_caso}`.
 
 ## 1. Sinal de conexão (usar o primeiro que existir)
 
-| # | Sinal | Frase que entra depois de "Oi {nome}, tudo bem?" |
+| # | Sinal | Frase que entra depois de "Olá {nome}, tudo bem?" |
 |---|---|---|
 | 1 | Passou pela Salesforce | Vi que você também passou pela Salesforce. Fiquei lá até 2024. |
 | 2 | Estudou na UFPR ou no MBA USP/Esalq | Vi que você também estudou na {UFPR / USP Esalq}. |
@@ -19,7 +19,7 @@ Depois da primeira resposta, acompanhar o tom da pessoa, sempre sem abreviaçõe
 
 ## 2. Nota de conexão (máx. 300 caracteres)
 
-> Oi {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil. Acredito que faça sentido a conexão e trocar insights sobre o tema.
+> Olá {nome}, tudo bem? Acompanho de perto o atendimento de grandes marcas aqui no Brasil. Acredito que faça sentido a conexão e trocar insights sobre o tema.
 
 (≈ 160 caracteres. Com sinal de conexão, a frase do sinal substitui "Acompanho de perto o atendimento de grandes marcas aqui no Brasil.")
 
