@@ -22,15 +22,20 @@ Não encontrados: `mensagens.csv` e `tom-de-voz.md`. O tom de voz veio de `brand
 
 O rascunho v0 tinha: "desempenha um papel fundamental", "plataforma robusta que potencializa a jornada do cliente" (vocabulário de IA e ênfase inflada); "não só apresentando a Sprinklr, mas entendendo profundamente" (paralelismo negativo); "garantindo que a conversa evolua" (gerúndio de muleta); "empatia, clareza e objetividade" (regra de três); travessão no tom. Na versão final: frases afirmativas com sujeito e verbo, sem gerúndio de ligação, sem trio de adjetivos, sem travessão e com negrito só onde a estrutura precisa.
 
-Das conversas reais, ficaram de fora por conflito com as regras: "Te add no Linkedin" (abreviação, virou "Te adicionei no LinkedIn"), "Olá" (a regra é "Oi"), "jornada do cliente" e "revolucionando" (lista de proibidas), e os dois convites na mesma mensagem (regra de um pedido por mensagem).
+Das conversas reais, ficaram de fora por conflito com as regras: "Te add no Linkedin" (abreviação, virou "Te adicionei no LinkedIn"), "revolucionando" (lista de proibidas) e os dois convites na mesma mensagem (regra de um pedido por mensagem).
 
-## Pendente (perguntas para o Raul)
+## Decisões do Raul (2026-10-14)
+
+1. Abertura com "Olá" (também atualizado em `brand/voice-outbound.md`).
+2. Caso do cliente financeiro (45% menos casos na fila, -83% no tempo médio de atendimento) liberado, sem link. Entrou em `brand/provas.md`.
+3. Convite padrão: enviar um Swag Kit e aprofundar o tema. Almoço só quando a campanha liberar.
+4. Quando o lead topa, a conversa passa para o Raul.
+5. Emojis: só 🇧🇷 depois de "Sprinklr" e 🥩🍷 no convite de almoço.
+6. Perguntou se é robô: o agente diz que é um assistente do Raul.
+7. "Jornada do cliente" é expressão do Raul, liberada.
+
+## Pendente
 
 1. Enviar `mensagens.csv` para calibrar as expressões com mais mensagens revisadas.
-2. "Olá" ou "Oi"? As conversas reais usam "Olá"; a voz revisada manda "Oi". O prompt está com "Oi".
-3. Emoji: o prompt libera só 🇧🇷 e 🥩🍷. Confirmar.
-4. Número "cliente do segmento financeiro: 45% menos casos na fila e 83% menos tempo médio de atendimento": qual o caso público e o link? Até lá, fica fora.
-5. Almoço, Swag Brinde e convite de evento: em que toque podem entrar (a cadência proíbe pedido na 1ª mensagem) e qual evento vale agora?
-6. Passagem para o Raul: só atribuir a conversa ou mandar um link de agenda?
-7. Se o lead perguntar se é robô: o prompt manda assumir que é um assistente do Raul. Confirmar.
-8. Indicação interna ("{pessoa} participou do nosso evento"): de onde vem esse dado na Nuvia?
+2. Indicação interna ("{pessoa} participou do nosso evento"): de onde vem esse dado na Nuvia?
+3. Templates com "Oi" em `campaigns/cx/outbound/mensagens-base.md` e no playbook ainda não foram trocados para "Olá".
