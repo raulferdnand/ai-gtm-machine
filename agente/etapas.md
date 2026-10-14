@@ -329,7 +329,7 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 1. Evento no calendário: em que data e hora ele é criado? (ex.: lembrete para você assumir a conversa no mesmo dia, ou só quando o horário com o lead estiver fechado)
 2. Modo consultivo: intervalo entre toques, máximo de toques e o que fazer se o lead nunca responder.
 3. Reunião agendada: lembrete antes da reunião, prazo do follow-up de no-show e para onde o lead vai depois da reunião realizada.
-4. Criar na Nuvia (pela interface) os campos categoria_cargo, dor_principal, interesse, disponibilidade e um campo de empresa, se ainda não existir.
+4. Criar na Nuvia (pela interface) os 5 campos de `agente/campos-nuvia.md` e trazer os IDs para a tabela de configuração.
 
 ## Decisões do Raul (2026-10-14)
 
