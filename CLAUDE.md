@@ -92,7 +92,7 @@ Prospecção 1:1 segue outro registro: carregue `brand/voice-outbound.md` e use 
 - **Prompt de agente:** mostre o texto no chat e espere OK antes de gravar.
 - **Segredos e leads (PII):** `.env`, CSVs, ledgers e `signals/` ficam fora do git (`.gitignore`). Nunca imprima chaves nem suba dados de leads.
 - **Ações externas** (publicar, enviar DM/e-mail, ativar campanha, criar contatos em massa): confirme com o aluno antes.
-- **LinkedIn do Raul: NUNCA publicar, agendar ou enviar nada automaticamente** (post, comentário, convite, DM). Todo texto vai primeiro para revisão dele no chat; só sai depois de aprovação explícita, e ele mesmo publica ou autoriza peça a peça.
+- **LinkedIn e WhatsApp do Raul: NUNCA publicar, agendar ou enviar nada automaticamente** (post, comentário, convite, DM, mensagem). O agente de prospecção roda em modo rascunho nos dois canais. Todo texto vai primeiro para revisão dele no chat; só sai depois de aprovação explícita, e ele mesmo publica ou autoriza peça a peça.
 - **Campanha padrão = `cx`.** Quando o Raul pedir "copie campaigns/_template para campaigns/[público]" sem dizer o público, o público é CX. Se `campaigns/cx/` já existir, NÃO copie por cima (perderia o trabalho feito): só abra `campaigns/cx/playbook.md` e mostre o estado atual.
 - **Git automático:** ao terminar qualquer alteração em arquivos versionados, faça commit com mensagem descritiva e push para `origin main`, sem perguntar. Nunca versione o que está no `.gitignore` (`.env`, CSVs, `signals/`, dados de leads).
 - Entrega direta: sem loops de confirmação além dos gates (hook → conteúdo → publicação). Correções do aluno entram na hora, sem justificar a versão anterior.

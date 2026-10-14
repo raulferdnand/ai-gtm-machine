@@ -18,22 +18,29 @@ Status: rascunho, aguardando aprovação do Raul. Nada gravado na Nuvia.
 
 ## Configuração no builder (para o Raul, não vai no prompt)
 
+Conta Nuvia: "Nuvia - Partners (Yuri)" (consultada em 2026-10-14). A conta é compartilhada com outros usuários, então vários campos abaixo foram criados para outros projetos e só são reaproveitados quando servem.
+
 | Item | Valor |
 |---|---|
-| Canal | `[vazio]` (ver Pendente, item 1) |
+| Canal | LinkedIn e WhatsApp, os dois em modo rascunho: nenhuma mensagem sai sem aprovação do Raul (decisão de 2026-10-14) |
 | Etapa de entrada da campanha | Identificação do interesse |
-| Usuário para `{assign_user}` (Raul) | `[vazio]` |
-| Campo nome do lead (`{nome}`) | `[vazio]` |
-| Campo empresa (`{empresa}`) | `[vazio]` |
-| Campo categoria_cargo (vem da triagem de ICP) | `[vazio]` |
-| Campo sinal do lead (post engajado, ponto em comum) | `[vazio]` |
-| Campo setor da empresa | `[vazio]` |
-| Campo `dor_principal` (gravado pelo agente) | `[vazio]` |
-| Campo `interesse` (gravado pelo agente) | `[vazio]` |
-| Campo `disponibilidade` (gravado pelo agente) | `[vazio]` |
-| Campo `motivo_perda` (gravado pelo agente) | `[vazio]` |
+| Usuário para `{assign_user}` | Raul · `6acbcdd18d1ddf7d0b4848bb` |
+| Evento no calendário do Raul | integração `google-calendar` conectada na conta (`6a17858c83ef88fa3c2a3269`). Mention que cria o evento pela etapa: `[vazio]` (não documentada na skill `nuvia-crm`) |
+| Nome do lead (`{nome}`) | campo nativo `contact.name` |
+| Empresa (`{empresa}`) | `[vazio]` (não há campo de empresa na lista de campos personalizados) |
+| categoria_cargo | `[vazio]`: criar campo. Existe "Cargo do lead" (`6a31f8a38104cb0689286428`), que guarda o cargo escrito, não a categoria |
+| ICP (triagem) | "ICP" · `6a82ffc3edb23472bc0bada0` |
+| Sinal do lead (post engajado, ponto em comum) | "post-interacao" · `6a58e4540add8161d61db3b8` |
+| Setor da empresa | "Segmento/setor da empresa" · `6a31f8a45267ec2c73b99be6` |
+| `dor_principal` (gravado pelo agente) | `[vazio]`: criar campo (contexto conversa) |
+| `interesse` (gravado pelo agente) | `[vazio]`: criar campo (contexto conversa) |
+| `disponibilidade` (gravado pelo agente) | `[vazio]`: criar campo (contexto conversa) |
+| `data_reuniao` | "data_reuniao" · `6a6350215d75994a17ce448a` (data, contexto conversa) |
+| `motivo_perda` (gravado pelo agente) | "Motivo perdido" · `6a633961056646004b1dab6c` |
 | Follow-ups de Identificação | FUP 1 em D+2 e FUP 2 em D+7 após o aceite (playbook §5) |
-| Follow-ups das demais etapas | `[vazio]` |
+| Follow-ups do Modo consultivo | intervalo `[vazio]`, máximo de toques `[vazio]` |
+| Follow-up de no-show (Reunião agendada) | sim, para remarcar. Prazo `[vazio]` |
+| Lembrete antes da reunião | `[vazio]` |
 
 ---
 
@@ -157,6 +164,8 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 ### [vazio]
 - Intervalo entre os toques desta etapa e número máximo de toques.
 - O que fazer se o lead não responder a nenhum toque desta etapa.
+
+Decisão do Raul (2026-10-14): lead qualificado que diz "não é o momento" vem para esta etapa em vez de ter a conversa encerrada.
 ```
 
 ---
@@ -165,8 +174,8 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 
 | Item | Definição |
 |---|---|
-| Objetivo | Passar o lead que aceitou o convite para o Raul combinar a conversa e o envio do Swag Kit |
-| O que perguntar | Nada além de confirmar que o Raul pode chamar. Agenda, horário e endereço do Swag Kit ficam com o Raul |
+| Objetivo | Passar o lead que aceitou o convite para o Raul e criar um evento no calendário dele |
+| O que perguntar | Nada. O Raul assume a conversa e combina horário e endereço do Swag Kit |
 | Critério de saída | Raul confirma a reunião marcada → Reunião agendada. Lead desiste ("deixa para depois") → Modo consultivo. Lead pede para parar → Perdido |
 
 ### Prompt da etapa
@@ -174,7 +183,7 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 ```
 # Agendar reunião
 
-Objetivo: avisar o lead que o Raul vai falar com ele para combinar a conversa e o Swag Kit, e passar a conversa para o Raul.
+Objetivo: avisar o lead que o Raul vai falar com ele, passar a conversa para o Raul e criar um evento no calendário do Raul.
 Saídas: Reunião agendada (o Raul confirmou data e horário com o lead), Modo consultivo (lead adiou sem data), Perdido (lead pediu para parar).
 
 ### Regras Gerais
@@ -185,7 +194,7 @@ Saídas: Reunião agendada (o Raul confirmou data e horário com o lead), Modo c
 
 #### Passo 1: Passar para o Raul
 Regras: entrada na etapa.
-Objetivo: mande o template "passagem" e EXECUTE {assign_user Raul} no mesmo turno. Nunca prometa a passagem sem executar.
+Objetivo: mande o template "passagem" e, no mesmo turno, EXECUTE {assign_user Raul} e crie o evento no calendário do Raul (título: "Sprinklr: conversa com {nome}"; descrição: a dor registrada em dor_principal). Nunca prometa a passagem sem executar as duas ações.
 Fallback: nenhum. A passagem acontece sempre.
 
 #### Passo 2: Lead escreve antes do Raul
@@ -196,7 +205,7 @@ Fallback: nenhum.
 #### Passo 3: Decidir rota
 Regras: houve mudança na conversa.
 Objetivo:
-- O Raul confirmou data e horário com o lead: {update_step Reunião agendada}.
+- O Raul confirmou data e horário com o lead: {update_field data_reuniao} + {update_step Reunião agendada}.
 - Lead adiou sem data ("depois a gente vê", "agora não dá"): {update_field interesse = não agora} + {update_step Modo consultivo}.
 - Lead pediu para parar: {update_field motivo_perda = pediu para parar} + template "encerramento" + {update_step Perdido}.
 
@@ -205,8 +214,7 @@ passagem: "{nome}, vou pedir para o Raul te chamar por aqui para combinar o melh
 encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 
 ### [vazio]
-- Link de agenda (se o Raul quiser que o agente mande).
-- Prazo para o Raul assumir e follow-up se o lead ficar sem resposta.
+- Data e hora do evento criado na passagem (ver Pendente).
 - Duração e formato da reunião.
 ```
 
@@ -218,7 +226,7 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 |---|---|
 | Objetivo | Manter a reunião de pé e repassar ao Raul qualquer pedido do lead |
 | O que perguntar | Nada por iniciativa própria. Só responde quando o lead escreve |
-| Critério de saída | Lead pede para remarcar → Agendar reunião. Cancela sem nova data → Modo consultivo. Pede para parar → Perdido |
+| Critério de saída | Lead pede para remarcar ou não aparece (no-show) → Agendar reunião. Cancela sem nova data → Modo consultivo. Pede para parar → Perdido |
 
 ### Prompt da etapa
 
@@ -226,7 +234,7 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 # Reunião agendada
 
 Objetivo: responder o lead que já tem reunião marcada com o Raul e repassar ao Raul qualquer mudança.
-Saídas: Agendar reunião (lead pede para remarcar), Modo consultivo (lead cancela sem nova data), Perdido (lead pede para parar).
+Saídas: Agendar reunião (lead pede para remarcar ou não apareceu na reunião), Modo consultivo (lead cancela sem nova data), Perdido (lead pede para parar).
 
 ### Regras Gerais
 - Você não confirma, muda nem cancela horário sozinho.
@@ -243,17 +251,19 @@ Fallback: pergunta sobre a reunião que você não sabe responder: diga que o Ra
 Regras: lead respondeu.
 Objetivo:
 - Pediu para remarcar: {assign_user Raul} + {update_step Agendar reunião}.
+- Não apareceu na reunião (follow-up de no-show): mande o template "remarcar" e, se o lead responder querendo remarcar, {update_step Agendar reunião}.
 - Cancelou sem nova data: {update_field interesse = não agora} + {update_step Modo consultivo}.
 - Pediu para parar: {update_field motivo_perda = pediu para parar} + template "encerramento" + {update_step Perdido}.
 - Qualquer outra resposta: continua nesta etapa.
 
 ### Templates
 repasse: "Obrigado por avisar, {nome}. O Raul vai te responder por aqui."
+remarcar: "{nome}, acho que nosso horário não deu certo. Quer que o Raul te chame para combinar outro?"
 encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 
 ### [vazio]
 - Lembrete antes da reunião (quando e com qual texto).
-- O que fazer se o lead não aparecer (no-show).
+- Prazo do follow-up de no-show.
 - Quem marca a reunião como realizada e para onde o lead vai depois dela.
 ```
 
@@ -316,8 +326,14 @@ encerramento: "Obrigado pelo retorno, {nome}. Fico à disposição."
 
 ## Pendente (perguntas para o Raul)
 
-1. Canal do agente. O `CLAUDE.md` proíbe enviar qualquer coisa automaticamente no seu LinkedIn. Se o agente rodar no LinkedIn, ele precisa trabalhar em modo rascunho (você aprova cada mensagem). No WhatsApp, pode rodar sozinho?
-2. Modo consultivo: intervalo entre toques, número máximo de toques e o que fazer se o lead nunca responder. O playbook atual (§5) encerra o "não é o momento"; esta etapa substitui essa regra.
-3. Agendar reunião: link de agenda, prazo para você assumir a conversa e duração da reunião.
-4. Reunião agendada: lembrete, no-show e para onde o lead vai depois da reunião.
-5. IDs dos campos e do seu usuário na Nuvia (tabela de configuração).
+1. Evento no calendário: em que data e hora ele é criado? (ex.: lembrete para você assumir a conversa no mesmo dia, ou só quando o horário com o lead estiver fechado)
+2. Modo consultivo: intervalo entre toques, máximo de toques e o que fazer se o lead nunca responder.
+3. Reunião agendada: lembrete antes da reunião, prazo do follow-up de no-show e para onde o lead vai depois da reunião realizada.
+4. Criar na Nuvia (pela interface) os campos categoria_cargo, dor_principal, interesse, disponibilidade e um campo de empresa, se ainda não existir.
+
+## Decisões do Raul (2026-10-14)
+
+- Canal: LinkedIn e WhatsApp em modo rascunho, nada sai sem aprovação dele.
+- "Não é o momento" de lead qualificado vai para o Modo consultivo (substitui a regra do playbook §5).
+- Agendar reunião: o Raul assume a conversa e o agente gera um evento no calendário dele.
+- No-show: follow-up para remarcar, voltando para Agendar reunião.
